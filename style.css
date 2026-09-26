@@ -26,3 +26,28 @@ main{padding:14px}.page{display:none}.page.active{display:block}.card,.mini{back
 .bottom-nav{position:fixed;z-index:30;bottom:0;left:50%;transform:translateX(-50%);width:min(920px,100%);height:72px;padding:7px 12px max(7px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(3,1fr);background:rgba(255,255,255,.96);backdrop-filter:blur(15px);border-top:1px solid var(--line)}.nav{border:0;background:transparent;color:#8a92a0;font-size:10px;font-weight:700;border-radius:12px}.nav span{display:block;font-size:20px;margin-bottom:2px}.nav.active{color:var(--accent);background:#f2f5fa}
 .loading{position:fixed;inset:0;z-index:100;background:#f6f7f9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--muted);font-size:13px}.loading.hidden{display:none}.spinner{width:28px;height:28px;border:3px solid #dfe4eb;border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
 @media(min-width:700px){main{padding:20px}.topbar{padding:20px}.card{padding:22px}.three-grid{gap:13px}.mini{padding:18px}.mini strong{font-size:20px}.large{height:330px}.company-chart{height:270px}.pe-chart{height:220px}}
+
+.chart-help{font-size:11px;color:var(--muted);margin-top:4px}
+.axis-label{font-size:17px;fill:#7d8796}
+.buy-label{font-size:18px;fill:#a66b22;font-weight:700}
+.bar-value{font-size:18px;fill:#253044;font-weight:700}
+.bar-change{font-size:14px;font-weight:800}
+.svg-positive{fill:#18875b}.svg-negative{fill:#c34f4f}
+@media(max-width:520px){
+  .app{width:100%;overflow-x:hidden}
+  .topbar{padding:16px 14px 11px;align-items:center}
+  .topbar h1{font-size:22px}
+  .profile{padding:8px 10px}
+  main{padding:12px}
+  .card{padding:15px;border-radius:16px}
+  .hero-value{font-size:31px}
+  .three-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .mini{padding:11px 9px;border-radius:14px}
+  .mini strong{font-size:15px;white-space:nowrap}
+  .mini span,.mini small{font-size:9px}
+  .allocation-labels{gap:8px;font-size:10px}
+  .large{height:250px}.company-chart{height:230px}.pe-chart{height:190px}
+  .metrics,.pulse-grid{gap:7px}.metrics div,.pulse-grid div{padding:10px}
+  .bottom-nav{height:66px;padding-left:8px;padding-right:8px}
+  .nav{font-size:10px}.nav span{font-size:18px}
+}
