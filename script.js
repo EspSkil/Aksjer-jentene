@@ -22,6 +22,8 @@ function bindUI(){
   document.querySelectorAll('.range-tabs button').forEach(b=>b.onclick=()=>{currentRange=b.dataset.range;document.querySelectorAll('.range-tabs button').forEach(x=>x.classList.toggle('active',x===b));renderStockChart()});
   document.querySelectorAll('.metric-tabs button').forEach(b=>b.onclick=()=>{companyMetric=b.dataset.metric;document.querySelectorAll('.metric-tabs button').forEach(x=>x.classList.toggle('active',x===b));renderCompanyChart()});
   $('spToggle').onchange=e=>{showSP=e.target.checked;renderStockChart()};
+
+ const dt=$('purchaseDetailToggle');if(dt)dt.onclick=()=>{const d=$('purchaseDetails');const open=d.classList.toggle('open');document.querySelectorAll('.purchase-details-inline').forEach(x=>x.classList.toggle('open',open));dt.textContent=open?'Skjul kjøpsdetaljer':'Vis kjøpsdetaljer'};
 }
 function render(){
   const p=(DATA.portfolio&&DATA.portfolio[currentPerson])||{}, has=!!p.ticker&&N(p.shares)>0;
