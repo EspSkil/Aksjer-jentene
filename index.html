@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f8fb">
+  <title>Aksjer-jentene</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">AKSJELÆRING</div>
+        <h1 id="pageTitle">Min portefølje</h1>
+      </div>
+      <div class="profile-switch" aria-label="Velg profil">
+        <button class="profile active" data-person="Elise">Elise</button>
+        <button class="profile" data-person="Malin">Malin</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page active" id="page-home">
+        <div class="hero card">
+          <div class="hero-top">
+            <div>
+              <div class="muted">Total verdi</div>
+              <div class="hero-value" id="totalValue">–</div>
+            </div>
+            <div class="updated" id="updated">–</div>
+          </div>
+          <div class="allocation-bar" id="allocationBar"></div>
+          <div class="legend">
+            <span><i class="dot stock"></i>Aksjer</span>
+            <span><i class="dot fund"></i>Fond</span>
+            <span><i class="dot cash"></i>Kontanter</span>
+          </div>
+        </div>
+
+        <div class="stat-grid">
+          <article class="mini-card"><span>Aksjer</span><strong id="stockValue">–</strong><small id="stockSub">–</small></article>
+          <article class="mini-card"><span>Fond</span><strong id="fundValue">–</strong><small>stabil del</small></article>
+          <article class="mini-card"><span>Kontanter</span><strong id="cashValue">–</strong><small>klart til bruk</small></article>
+        </div>
+
+        <article class="card stock-card" id="stockCard">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">MIN AKSJE</div>
+              <h2 id="companyName">–</h2>
+            </div>
+            <div class="ticker-pill" id="ticker">–</div>
+          </div>
+          <div class="price-row">
+            <div><span class="muted">Kurs</span><strong id="priceLocal">–</strong></div>
+            <div><span class="muted">I NOK</span><strong id="priceNok">–</strong></div>
+            <div><span class="muted">Antall</span><strong id="shares">–</strong></div>
+          </div>
+          <div class="chart-wrap"><svg id="miniChart" viewBox="0 0 600 220" preserveAspectRatio="none"></svg></div>
+          <div class="chart-foot"><span>Fra 2024</span><span id="latestMarketDate">–</span></div>
+        </article>
+
+        <article class="card lesson-card">
+          <div class="eyebrow">UKENS LÆRING</div>
+          <h2 id="lessonTitle">Hva eier du egentlig?</h2>
+          <p id="lessonText">Når du kjøper en aksje, kjøper du en liten del av et ekte selskap – og får del i både oppturer og nedturer.</p>
+        </article>
+      </section>
+
+      <section class="page" id="page-stock">
+        <div class="section-intro">
+          <div class="eyebrow">INVESTERINGEN</div>
+          <h2 id="stockPageTitle">Aksjen min</h2>
+          <p>Her skiller vi mellom selskapets aksjekurs og hva investeringen faktisk er verdt i norske kroner.</p>
+        </div>
+
+        <article class="card">
+          <div class="section-head"><h2>Kursutvikling</h2><span class="ticker-pill" id="ticker2">–</span></div>
+          <div class="chart-wrap large"><svg id="priceChart" viewBox="0 0 600 300" preserveAspectRatio="none"></svg></div>
+          <div class="chart-foot"><span id="chartStart">–</span><span id="chartEnd">–</span></div>
+        </article>
+
+        <div class="stat-grid two">
+          <article class="mini-card"><span>Siste kurs</span><strong id="lastUsd">–</strong><small>lokal valuta</small></article>
+          <article class="mini-card"><span>USD/NOK</span><strong id="fx">–</strong><small>valutaeffekt</small></article>
+        </div>
+
+        <article class="card" id="purchaseCard">
+          <div class="eyebrow">MITT KJØP</div>
+          <h2>Fra handel til eierskap</h2>
+          <div id="purchaseDetails" class="detail-list"></div>
+        </article>
+
+        <article class="card empty-state" id="noStock">
+          <div class="empty-icon">◎</div>
+          <h2>Ingen aksje valgt ennå</h2>
+          <p>Når første aksje er kjøpt, dukker kurs, kjøp og utvikling automatisk opp her.</p>
+        </article>
+      </section>
+
+      <section class="page" id="page-company">
+        <div class="section-intro">
+          <div class="eyebrow">SELSKAPET</div>
+          <h2 id="companyPageTitle">Forstå selskapet</h2>
+          <p>Det viktigste er ikke bare om kursen går opp eller ned, men hvordan virksomheten faktisk utvikler seg.</p>
+        </div>
+
+        <div class="metric-grid" id="companyMetrics">
+          <article class="metric-card"><span>P/E</span><strong id="peMetric">–</strong><small>pris per krone overskudd</small></article>
+          <article class="metric-card"><span>EPS TTM</span><strong id="epsMetric">–</strong><small>resultat per aksje</small></article>
+          <article class="metric-card"><span>Omsetningsvekst</span><strong id="revGrowthMetric">–</strong><small>siste kvartal</small></article>
+          <article class="metric-card"><span>Driftsmargin</span><strong id="marginMetric">–</strong><small>siste kvartal</small></article>
+        </div>
+
+        <article class="card">
+          <div class="eyebrow">SLIK KAN DU TENKE</div>
+          <h2>Fire spørsmål før du ser på kursen</h2>
+          <div class="question-list">
+            <div><b>1</b><span>Vokser salget?</span></div>
+            <div><b>2</b><span>Tjener selskapet mer penger?</span></div>
+            <div><b>3</b><span>Er lønnsomheten god?</span></div>
+            <div><b>4</b><span>Er aksjen dyr eller billig i forhold til overskuddet?</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="eyebrow">HUSK</div>
+          <h2>Kurs ≠ selskap</h2>
+          <p>En god bedrift kan være en dårlig investering hvis prisen er for høy. Og en fallende aksjekurs betyr ikke automatisk at selskapet har blitt dårligere.</p>
+        </article>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-page="home"><span>⌂</span>Oversikt</button>
+      <button class="nav-btn" data-page="stock"><span>↗</span>Aksjen</button>
+      <button class="nav-btn" data-page="company"><span>▦</span>Selskapet</button>
+    </nav>
+  </div>
+
+  <div class="loading" id="loading"><div class="spinner"></div><span>Henter porteføljen…</span></div>
+  <script src="script.js"></script>
+</body>
+</html>
