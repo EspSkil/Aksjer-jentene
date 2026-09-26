@@ -51,3 +51,8 @@ main{padding:14px}.page{display:none}.page.active{display:block}.card,.mini{back
   .bottom-nav{height:66px;padding-left:8px;padding-right:8px}
   .nav{font-size:10px}.nav span{font-size:18px}
 }
+
+.allocation-title{font-size:11px;color:var(--muted);font-weight:700;margin-top:16px;margin-bottom:-8px}
+.switch-row{display:flex;align-items:center;justify-content:flex-end;gap:7px;margin-top:7px;font-size:10px;color:var(--muted);font-weight:700}.switch-row input{display:none}.switch-row i{display:inline-block;width:34px;height:20px;border-radius:20px;background:#d8dde6;position:relative}.switch-row i:after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:#fff;top:3px;left:3px;transition:.2s}.switch-row input:checked+i{background:#748bb4}.switch-row input:checked+i:after{left:17px}
+.sp-line{fill:none;stroke:#9aa4b5;stroke-width:2.5;stroke-dasharray:8 5;vector-effect:non-scaling-stroke}.sp-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#9aa4b5;margin-right:5px}.comparison-result{display:flex;justify-content:flex-end;gap:18px;font-size:11px;margin-top:7px}.comparison-result span{color:var(--muted)}
+.market-change{display:flex;gap:8px;flex-wrap:wrap;margin-top:5px;font-size:9px;font-weight:700}
