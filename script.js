@@ -22,8 +22,11 @@ function bindUI(){
   document.querySelectorAll('.range-tabs button').forEach(b=>b.onclick=()=>{currentRange=b.dataset.range;document.querySelectorAll('.range-tabs button').forEach(x=>x.classList.toggle('active',x===b));renderStockChart()});
   document.querySelectorAll('.metric-tabs button').forEach(b=>b.onclick=()=>{companyMetric=b.dataset.metric;document.querySelectorAll('.metric-tabs button').forEach(x=>x.classList.toggle('active',x===b));renderCompanyChart()});
   $('spToggle').onchange=e=>{showSP=e.target.checked;renderStockChart()};
-
- const dt=$('purchaseDetailToggle');if(dt)dt.onclick=()=>{const d=$('purchaseDetails');const open=d.classList.toggle('open');document.querySelectorAll('.purchase-details-inline').forEach(x=>x.classList.toggle('open',open));dt.textContent=open?'Skjul kjøpsdetaljer':'Vis kjøpsdetaljer'};
+  const detailToggle=$('purchaseDetailToggle');
+  if(detailToggle) detailToggle.onclick=()=>{
+    const d=$('purchaseDetails'),open=d.classList.toggle('open');
+    detailToggle.textContent=open?'Skjul kjøpsdetaljer':'Vis kjøpsdetaljer';
+  };
 }
 function render(){
   const p=(DATA.portfolio&&DATA.portfolio[currentPerson])||{}, has=!!p.ticker&&N(p.shares)>0;
@@ -36,7 +39,7 @@ function render(){
   setReturn('fundReturnHome',fp?.returnPct,fp?'avkastning':'venter på neste måling');
   $('companyName').textContent=has?(p.company||p.ticker):'Ingen aksje valgt';$('ticker').textContent=p.ticker||'–';
   $('stockPageTitle').textContent=has?(p.company||p.ticker):'Aksjen min';$('companyPageTitle').textContent=has?(p.company||p.ticker):'Forstå selskapet';
-  $('homeStockCard').style.display=has?'block':'none';$('stockMainCard').style.display=has?'block':'none';$('purchaseCard').style.display=has?'block':'none';$('benchmarkCard').style.display=has?'block':'none';$('noStock').style.display=has?'none':'block';
+  $('homeStockCard').style.display=has?'block':'none';$('stockMainCard').style.display=has?'block':'none';$('purchaseCard').style.display=has?'block':'none';$('noStock').style.display=has?'none':'block';
   renderEarnings();
   if(has){renderStockChart();renderPurchase(p);renderCompany();$('lessonTitle').textContent='Tre ting påvirker investeringen';$('lessonText').textContent=`${p.company||p.ticker} kan endre verdi fordi selskapet utvikler seg, markedet endrer hva det vil betale, og USD/NOK beveger seg.`}
   else{$('lessonTitle').textContent='Å vente er også et valg';$('lessonText').textContent='Pengene står i fond og kontanter til du har valgt et selskap du faktisk ønsker å eie.'}
@@ -100,7 +103,7 @@ function renderPurchase(p){
 }
 function renderCompany(){
   const inc=(DATA.financials?.incomeMCD||[]).filter(x=>/^Q\d/.test(x.period));if(!inc.length)return;
-  const q=inc[inc.length-1],prev=inc.at(-2),yearAgo=inc.length>=5?inc.at(-5):null;
+  const q=inc[inc.length-1],prev=inc[inc.length-2],yearAgo=inc.length>=5?inc[inc.length-5]:null;
   $('latestQuarter').textContent=q.period;$('companyTicker').textContent=DATA.portfolio?.[currentPerson]?.ticker||'MCD';
   $('revenue').textContent=moneyM(q.revenue);setDelta('revenueGrowth',q.revenueGrowthYoY,'YoY');
   $('opIncome').textContent=moneyM(q.operatingIncome);setDelta('opGrowth',q.operatingIncomeGrowthYoY,'YoY');

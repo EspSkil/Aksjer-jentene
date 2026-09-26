@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f6f7f9">
   <title>Aksjer-jentene</title>
-  <link rel="stylesheet" href="style.css?v=4.1">
+  <link rel="stylesheet" href="style.css?v=4.1.2">
 </head>
 <body>
 <div class="app">
@@ -65,7 +65,7 @@
     <section class="page active" id="page-stock">
       <div class="intro">
         <div class="eyebrow">INVESTERINGEN</div>
-        <h2 id="stockPageTitle">Aksjen min</h2>
+        <div class="stock-brand"><img src="assets/MCD.png" alt="McDonald’s logo" class="company-logo"><h2 id="stockPageTitle">Aksjen min</h2></div>
         <p>Kursen vises i USD. Din faktiske avkastning i NOK påvirkes også av valuta og gebyr.</p>
       </div><article class="card" id="purchaseCard">
         <div class="eyebrow">MITT KJØP</div>
@@ -73,7 +73,7 @@
           <div><span class="muted">Avkastning</span><strong id="purchaseReturn">–</strong></div>
           <div class="right"><span class="muted">Gevinst/tap</span><strong id="purchaseGain">–</strong></div>
         </div>
-        <div id="purchaseDetails" class="details"></div>
+        <button id="purchaseDetailToggle" class="detail-toggle" type="button">Vis kjøpsdetaljer</button><div id="purchaseDetails" class="details purchase-details-collapsed"></div>
       </article>
 
       <article class="card" id="stockMainCard">
@@ -164,6 +164,6 @@
 </div>
 
 <div class="loading" id="loading"><div class="spinner"></div><span>Henter porteføljen…</span></div>
-<script src="script.js?v=4.1"></script>
+<script src="script.js?v=4.1.2"></script>
 </body>
 </html>

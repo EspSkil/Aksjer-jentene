@@ -58,13 +58,8 @@ main{padding:14px}.page{display:none}.page.active{display:block}.card,.mini{back
 .market-change{display:flex;gap:8px;flex-wrap:wrap;margin-top:5px;font-size:9px;font-weight:700}
 
 .stock-brand{display:flex;align-items:center;gap:10px}
-.company-logo{width:42px;height:42px;object-fit:contain;border-radius:9px}
-.detail-toggle{margin-top:10px;border:0;background:transparent;color:var(--accent);font:inherit;font-size:11px;font-weight:800;padding:4px 0;cursor:pointer}
-.purchase-details,.purchase-details-inline{display:none}
-.purchase-details.open,.purchase-details-inline.open{display:block}
-#purchaseCard .investment-main{margin-top:10px}
-#purchaseCard .hero-return{font-size:38px}
-@media(max-width:520px){
- .company-logo{width:36px;height:36px}
- #purchaseCard .hero-return{font-size:34px}
-}
+.company-logo{width:44px;height:44px;object-fit:contain}
+.detail-toggle{border:0;background:transparent;color:var(--accent);font:inherit;font-size:11px;font-weight:800;padding:10px 0 0;cursor:pointer}
+.purchase-details-collapsed{display:none}
+.purchase-details-collapsed.open{display:grid}
+@media(max-width:520px){.company-logo{width:38px;height:38px}}
