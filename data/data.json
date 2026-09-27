@@ -1,8 +1,8 @@
 {
   "meta": {
-    "updated": "2026-09-27T12:37:02",
+    "updated": "2026-09-27T12:40:51",
     "timeZone": "Europe/Oslo",
-    "version": "2.2",
+    "version": "2.3",
     "nextEarningsDate": "2026-10-29"
   },
   "portfolio": {
@@ -30,7 +30,7 @@
       },
       "fundPerformance": {
         "startDate": "2026-09-24",
-        "latestDate": "2026-10-31",
+        "latestDate": "2026-09-24",
         "startValueNOK": 0,
         "currentValueNOK": 0,
         "netFlowsNOK": 0,
@@ -45,14 +45,6 @@
           "fixedIncomeFundValueNOK": 0,
           "cashNOK": 895,
           "totalValueNOK": 9894.175522216798
-        },
-        {
-          "date": "2026-10-31",
-          "stockValueNOK": 8992.959799999999,
-          "equityFundValueNOK": 0,
-          "fixedIncomeFundValueNOK": 0,
-          "cashNOK": 895,
-          "totalValueNOK": 9887.959799999999
         }
       ]
     },
@@ -76,7 +68,7 @@
       "stockPerformance": null,
       "fundPerformance": {
         "startDate": "2026-09-24",
-        "latestDate": "2026-10-31",
+        "latestDate": "2026-09-24",
         "startValueNOK": 0,
         "currentValueNOK": 0,
         "netFlowsNOK": 0,
@@ -86,14 +78,6 @@
       "history": [
         {
           "date": "2026-09-24",
-          "stockValueNOK": 0,
-          "equityFundValueNOK": 0,
-          "fixedIncomeFundValueNOK": 0,
-          "cashNOK": 0,
-          "totalValueNOK": 0
-        },
-        {
-          "date": "2026-10-31",
           "stockValueNOK": 0,
           "equityFundValueNOK": 0,
           "fixedIncomeFundValueNOK": 0,
