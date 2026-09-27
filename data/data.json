@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-27T12:40:51",
+    "updated": "2026-09-27T12:48:16",
     "timeZone": "Europe/Oslo",
     "version": "2.3",
     "nextEarningsDate": "2026-10-29"
@@ -7622,24 +7622,6 @@
       "Verdi NOK": "10 000",
       "Innskudd/uttak siden sist": 0,
       "Kommentar": "Startverdi"
-    },
-    {
-      "Dato": "2026-10-31",
-      "Person": "Elise",
-      "Fond": "Rentefond",
-      "Type": "Rentefond",
-      "Verdi NOK": "(tom)",
-      "Innskudd/uttak siden sist": 0,
-      "Kommentar": "Månedlig status"
-    },
-    {
-      "Dato": "2026-10-31",
-      "Person": "Malin",
-      "Fond": "Likviditetsfond",
-      "Type": "Rentefond",
-      "Verdi NOK": "(tom)",
-      "Innskudd/uttak siden sist": 0,
-      "Kommentar": "Månedlig status"
     }
   ],
   "dividends": []
