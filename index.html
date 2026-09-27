@@ -3,167 +3,112 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f6f7f9">
+  <meta name="theme-color" content="#f8f5f8">
   <title>Aksjer-jentene</title>
-  <link rel="stylesheet" href="style.css?v=4.1.2">
+  <link rel="stylesheet" href="style.css?v=5.0">
 </head>
 <body>
 <div class="app">
   <header class="topbar">
     <div><div class="eyebrow">AKSJELÆRING</div><h1 id="pageTitle">Aksjen min</h1></div>
-    <div class="profiles">
-      <button class="profile active" data-person="Elise">Elise</button>
-      <button class="profile" data-person="Malin">Malin</button>
-    </div>
+    <div class="profiles"><button class="profile active" data-person="Elise">Elise</button><button class="profile" data-person="Malin">Malin</button></div>
   </header>
 
   <main>
-    <section class="page" id="page-home">
-      <article class="card hero">
-        <div class="hero-row">
-          <div><span class="muted">Total verdi</span><strong class="hero-value" id="totalValue">–</strong></div>
-          <small id="updated">–</small>
-        </div>
-        <div class="allocation-title">%-fordeling av pengene</div><div class="allocation" id="allocationBar"></div>
-        <div class="allocation-labels">
-          <span><i class="dot stock"></i>Aksjer <b id="stockPct">–</b></span>
-          <span><i class="dot fund"></i>Fond <b id="fundPct">–</b></span>
-          <span><i class="dot cash"></i>Kontanter <b id="cashPct">–</b></span>
-        </div>
-      </article>
-
-      <div class="three-grid">
-        <article class="mini"><span>Aksjer</span><strong id="stockValue">–</strong><small id="stockReturnHome">–</small></article>
-        <article class="mini"><span>Fond</span><strong id="fundValue">–</strong><small id="fundReturnHome">–</small></article>
-        <article class="mini"><span>Kontanter</span><strong id="cashValue">–</strong><small>tilgjengelig</small></article>
-      </div>
-
-      <article class="card" id="homeStockCard">
-        <div class="section-head">
-          <div><div class="eyebrow">MIN AKSJE</div><h2 id="companyName">–</h2></div>
-          <span class="pill" id="ticker">–</span>
-        </div>
-        <div class="big-return">
-          <div><span class="muted">Min avkastning</span><strong id="stockReturnBig">–</strong></div>
-          <div class="right"><span class="muted">Verdi</span><strong id="stockValue2">–</strong></div>
-        </div>
-        
-      </article>
-
-      <article class="card report-card" id="reportCard">
-        <div><div class="eyebrow">NESTE RAPPORT</div><h2 id="earningsDate">–</h2><p id="earningsCountdown">–</p></div>
-        <div class="calendar-icon">▣</div>
-      </article>
-
-      <article class="card lesson">
-        <div class="eyebrow">UKENS LÆRING</div>
-        <h2 id="lessonTitle">Hva eier du egentlig?</h2>
-        <p id="lessonText">En aksje er en liten eierandel i et ekte selskap.</p>
-      </article>
-    </section>
-
     <section class="page active" id="page-stock">
       <div class="intro">
         <div class="eyebrow">INVESTERINGEN</div>
         <div class="stock-brand"><img src="assets/MCD.png" alt="McDonald’s logo" class="company-logo"><h2 id="stockPageTitle">Aksjen min</h2></div>
-        <p>Kursen vises i USD. Din faktiske avkastning i NOK påvirkes også av valuta og gebyr.</p>
-      </div><article class="card" id="purchaseCard">
+        <p>Kursen vises i dollar. Avkastningen din i kroner påvirkes også av dollarkursen og gebyr.</p>
+      </div>
+
+      <article class="card" id="purchaseCard">
         <div class="eyebrow">MITT KJØP</div>
-        <div class="purchase-return">
-          <div><span class="muted">Avkastning</span><strong id="purchaseReturn">–</strong></div>
-          <div class="right"><span class="muted">Gevinst/tap</span><strong id="purchaseGain">–</strong></div>
-        </div>
+        <div class="purchase-return"><div><span class="muted">Avkastning</span><strong id="purchaseReturn">–</strong></div><div class="right"><span class="muted">Gevinst / tap</span><strong id="purchaseGain">–</strong></div></div>
         <button id="purchaseDetailToggle" class="detail-toggle" type="button">Vis kjøpsdetaljer</button><div id="purchaseDetails" class="details purchase-details-collapsed"></div>
       </article>
 
-      <article class="card" id="stockMainCard">
-        <div class="section-head">
-          <div><span class="muted">Kursutvikling</span><h2 id="chartPrice">–</h2></div>
-          <div class="right"><span class="muted">Valgt periode</span><strong id="periodReturn">–</strong>
-<label class="switch-row"><span>S&amp;P 500</span><input type="checkbox" id="spToggle"><i></i></label></div>
-        </div>
-        <div class="range-tabs">
-          <button data-range="1M">1 MND</button>
-          <button class="active" data-range="YTD">HiÅ</button>
-          <button data-range="1Y">1 ÅR</button>
-          <button data-range="TOTAL">TOTAL</button>
-        </div>
-        <div class="chart-box large"><svg id="priceChart" viewBox="0 0 700 330" preserveAspectRatio="none"></svg></div>
-        <div class="chart-legend" id="stockLegend"><span><i class="line-dot"></i>MCD</span><span><i class="buy-dot"></i>Mitt kjøp</span></div><div id="comparisonResult" class="comparison-result"></div>
-        <div class="chart-dates"><span id="chartStart">–</span><span id="chartEnd">–</span></div>
-      </article>
-
-      <div class="two-grid">
-        <article class="mini"><span>MCD kurs</span><strong id="lastUsd">–</strong><small>USD</small></article>
-        <article class="mini"><span>USD/NOK</span><strong id="fx">–</strong><small>valuta</small></article>
+      <div class="two-grid" id="marketMiniCards">
+        <article class="mini"><span>McDonald’s-aksjen</span><strong id="lastUsd">–</strong><small>kurs i dollar</small></article>
+        <article class="mini"><span>Dollar mot kroner</span><strong id="fx">–</strong><small>kroner per dollar</small></article>
       </div>
 
-      
+      <article class="card" id="stockMainCard">
+        <div class="section-head"><div><span class="muted">Aksjekurs</span><h2 id="chartPrice">–</h2></div><div class="right"><span class="muted">Endring i valgt periode</span><strong id="periodReturn">–</strong><label class="switch-row"><span>Sammenlign med S&amp;P 500</span><input type="checkbox" id="spToggle"><i></i></label></div></div>
+        <div class="range-tabs stock-range-tabs"><button data-range="1M">1 MND</button><button class="active" data-range="YTD">HiÅ</button><button data-range="1Y">1 ÅR</button><button data-range="TOTAL">TOTAL</button></div>
+        <div class="chart-box large"><svg id="priceChart" viewBox="0 0 700 330" preserveAspectRatio="none"></svg></div>
+        <div class="chart-legend" id="stockLegend"><span><i class="line-dot"></i>MCD</span><span><i class="buy-dot"></i>Mitt kjøp</span></div><div id="comparisonResult" class="comparison-result"></div>
+      </article>
 
-      
+      <article class="card fx-card" id="fxCard">
+        <div class="section-head"><div><div class="eyebrow">VALUTA</div><h2>USD/NOK</h2><p class="chart-help">Når dollaren blir dyrere, blir amerikanske aksjer mer verdt målt i kroner – og motsatt.</p></div><div class="right"><span class="muted">Nå</span><strong id="fxChartNow">–</strong><small id="fxPeriodReturn" class="metric-delta">–</small></div></div>
+        <div class="range-tabs fx-range-tabs"><button data-fx-range="1M">1 MND</button><button class="active" data-fx-range="YTD">HiÅ</button><button data-fx-range="1Y">1 ÅR</button><button data-fx-range="TOTAL">TOTAL</button></div>
+        <div class="chart-box fx-chart"><svg id="fxChart" viewBox="0 0 700 250" preserveAspectRatio="none"></svg></div>
+      </article>
 
+      <article class="card report-card" id="reportCard"><div><div class="eyebrow">NESTE KVARTALSRAPPORT</div><h2 id="earningsDate">–</h2><p id="earningsCountdown">–</p></div><div class="calendar-icon">▣</div></article>
       <article class="card empty" id="noStock"><div class="empty-icon">◎</div><h2>Ingen aksje valgt ennå</h2><p>Når første aksje er kjøpt, dukker kurs, kjøp og utvikling opp her.</p></article>
     </section>
 
-    <section class="page" id="page-company">
-      <div class="intro">
-        <div class="eyebrow">SELSKAPET</div>
-        <h2 id="companyPageTitle">Forstå selskapet</h2>
-        <p>Følg hva virksomheten leverer – ikke bare hva aksjekursen gjør.</p>
+    <section class="page" id="page-home">
+      <article class="card hero">
+        <div class="hero-row"><div><span class="muted">Konfirmasjonspengene</span><strong class="hero-value" id="totalValue">–</strong></div><small id="updated">–</small></div>
+        <div class="allocation-title">%-fordeling av pengene</div><div class="allocation" id="allocationBar"></div>
+        <div class="allocation-labels">
+          <span><i class="dot stock"></i>Enkeltaksjer <b id="stockPct">–</b></span><span><i class="dot equityfund"></i>Aksjefond <b id="equityFundPct">–</b></span><span><i class="dot fixedfund"></i>Rentefond <b id="fixedFundPct">–</b></span><span><i class="dot cash"></i>Kontanter <b id="cashPct">–</b></span>
+        </div>
+      </article>
+      <div class="four-grid">
+        <article class="mini"><span>Enkeltaksjer</span><strong id="stockValue">–</strong><small id="stockReturnHome">–</small></article>
+        <article class="mini"><span>Aksjefond</span><strong id="equityFundValue">–</strong><small>samlet</small></article>
+        <article class="mini"><span>Rentefond</span><strong id="fixedFundValue">–</strong><small id="fundReturnHome">–</small></article>
+        <article class="mini"><span>Kontanter</span><strong id="cashValue">–</strong><small>tilgjengelig</small></article>
       </div>
-
       <article class="card">
+        <div class="section-head"><div><div class="eyebrow">UTVIKLING</div><h2>Hvor har pengene vært plassert?</h2><p class="chart-help">Hovedlinjen viser total verdi. De tynnere linjene viser hvordan pengene er fordelt mellom plasseringene.</p></div></div>
+        <div class="portfolio-legend"><span><i class="legend-total"></i>Total</span><span><i class="legend-stock"></i>Aksjer</span><span><i class="legend-equity"></i>Aksjefond</span><span><i class="legend-fixed"></i>Rentefond</span><span><i class="legend-cash"></i>Kontanter</span></div>
+        <div class="chart-box portfolio-chart"><svg id="portfolioChart" viewBox="0 0 700 280" preserveAspectRatio="none"></svg></div>
+        <p class="chart-note" id="portfolioHistoryNote">Historikken bygges opp når nye månedsverdier registreres.</p>
+      </article>
+      <article class="card lesson"><div class="eyebrow">LÆRING</div><h2>Verdi er ikke det samme som avkastning</h2><p>Hvis penger flyttes fra rentefond til aksjefond, endres linjene selv om du ikke har tjent eller tapt penger på selve flyttingen.</p></article>
+    </section>
+
+    <section class="page" id="page-company">
+      <div class="intro"><div class="eyebrow">SELSKAPET</div><h2 id="companyPageTitle">Forstå selskapet</h2><p>Hva tjener McDonald’s, hvordan går restaurantene – og hva betaler markedet for overskuddet?</p></div>
+      <article class="card" id="companyQuarterCard">
         <div class="section-head"><div><div class="eyebrow">SISTE KVARTAL</div><h2 id="latestQuarter">–</h2></div><span class="pill" id="companyTicker">MCD</span></div>
-        <div class="metrics">
-          <div><span>Omsetning</span><strong id="revenue">–</strong><small id="revenueGrowth">–</small></div>
-          <div><span>Driftsresultat</span><strong id="opIncome">–</strong><small id="opGrowth">–</small></div>
-          <div><span>EPS</span><strong id="eps">–</strong><small id="epsGrowth">–</small></div>
-          <div><span>Driftsmargin</span><strong id="margin">–</strong><small id="marginChange">–</small></div>
+        <div class="metrics learning-metrics">
+          <div><span>Omsetning</span><strong id="revenue">–</strong><small class="explain">Pengene McDonald’s fikk inn i kvartalet</small><small id="revenueGrowth">–</small></div>
+          <div><span>Driftsresultat</span><strong id="opIncome">–</strong><small class="explain">Overskudd fra den vanlige driften</small><small id="opGrowth">–</small></div>
+          <div><span>Fortjeneste per aksje <b>(EPS)</b></span><strong id="eps">–</strong><small class="explain">Hvor mye av overskuddet som tilfaller hver aksje</small><small id="epsGrowth">–</small></div>
+          <div><span>Driftsmargin</span><strong id="margin">–</strong><small class="explain">Hvor mye av omsetningen som blir driftsresultat</small><small id="marginChange">–</small></div>
         </div>
       </article>
-
       <article class="card">
-        <div class="section-head"><div><div class="eyebrow">UTVIKLING</div><h2>De siste kvartalene</h2><p class="chart-help">Se nivået hvert kvartal og om utviklingen går opp eller ned.</p></div></div>
-        <div class="metric-tabs">
-          <button class="active" data-metric="revenue">Omsetning</button>
-          <button data-metric="eps">EPS</button>
-          <button data-metric="operatingMargin">Margin</button>
-        </div>
-        <div class="chart-box company-chart"><svg id="companyChart" viewBox="0 0 700 280" preserveAspectRatio="none"></svg></div>
-        <div class="chart-dates"><span id="companyChartStart">–</span><span id="companyChartEnd">–</span></div>
+        <div class="section-head"><div><div class="eyebrow">UTVIKLING</div><h2>De siste kvartalene</h2><p class="chart-help">Prosenten over søylen viser endringen fra samme kvartal året før.</p></div></div>
+        <div class="metric-tabs"><button class="active" data-metric="revenue">Omsetning</button><button data-metric="eps">Fortjeneste / aksje</button><button data-metric="operatingMargin">Margin</button></div>
+        <div class="chart-box company-chart"><svg id="companyChart" viewBox="0 0 700 300" preserveAspectRatio="none"></svg></div>
       </article>
-
       <article class="card">
-        <div class="eyebrow">BUSINESS PULSE</div>
-        <div class="pulse-grid">
-          <div><span>Global comp. sales</span><strong id="compSales">–</strong></div>
-          <div><span>USA comp. sales</span><strong id="usCompSales">–</strong></div>
-          <div><span>Lojalitetsbrukere</span><strong id="loyaltyUsers">–</strong></div>
-          <div><span>Lojalitetssalg TTM</span><strong id="loyaltySales">–</strong></div>
+        <div class="eyebrow">HVORDAN GÅR RESTAURANTENE?</div>
+        <div class="pulse-grid learning-pulse">
+          <div><span>Salg i eksisterende restauranter – globalt</span><strong id="compSales">–</strong><small>Endring i restauranter som har vært åpne en stund</small></div>
+          <div><span>Salg i eksisterende restauranter – USA</span><strong id="usCompSales">–</strong><small>Utviklingen i hjemmemarkedet</small></div>
+          <div><span>Aktive lojalitetsbrukere</span><strong id="loyaltyUsers">–</strong><small>Brukere de siste 90 dagene</small></div>
+          <div><span>Salg til lojalitetsmedlemmer</span><strong id="loyaltySales">–</strong><small>Siste 12 måneder</small></div>
         </div>
       </article>
-
       <article class="card">
-        <div class="section-head"><div><div class="eyebrow">VERDSETTELSE</div><h2>P/E-historikk</h2></div><strong id="currentPE">–</strong></div>
-        <div class="chart-box pe-chart"><svg id="peChart" viewBox="0 0 700 250" preserveAspectRatio="none"></svg></div>
-        <div class="chart-dates"><span id="peStart">–</span><span id="peEnd">–</span></div>
+        <div class="section-head"><div><div class="eyebrow">ER AKSJEN DYR ELLER BILLIG?</div><h2>Pris / fortjeneste (P/E)</h2><p class="chart-help">P/E viser hvor mye markedet betaler for én dollar i årlig fortjeneste.</p></div><strong id="currentPE">–</strong></div>
+        <div class="chart-box pe-chart"><svg id="peChart" viewBox="0 0 700 250" preserveAspectRatio="none"></svg></div><div class="chart-dates"><span id="peStart">–</span><span id="peEnd">–</span></div>
       </article>
-
-      <article class="card learning-box">
-        <div class="eyebrow">TRE SPØRSMÅL</div>
-        <p>① Vokser salget? &nbsp; ② Vokser resultatet? &nbsp; ③ Betaler du en fornuftig pris for overskuddet?</p>
-      </article>
+      <article class="card learning-box"><div class="eyebrow">TRE SPØRSMÅL Å HUSKE</div><p>① Vokser salget? &nbsp; ② Vokser overskuddet? &nbsp; ③ Hva betaler markedet for overskuddet?</p></article>
     </section>
   </main>
 
-  <nav class="bottom-nav">
-    <button class="nav active" data-page="stock"><span>↗</span>Aksjen</button>
-    <button class="nav" data-page="home"><span>⌂</span>Portefølje</button>
-    <button class="nav" data-page="company"><span>▦</span>Selskapet</button>
-  </nav>
+  <nav class="bottom-nav"><button class="nav active" data-page="stock"><span>↗</span>Aksjen</button><button class="nav" data-page="home"><span>⌂</span>Portefølje</button><button class="nav" data-page="company"><span>▦</span>Selskapet</button></nav>
 </div>
-
 <div class="loading" id="loading"><div class="spinner"></div><span>Henter porteføljen…</span></div>
-<script src="script.js?v=4.1.2"></script>
+<script src="script.js?v=5.0"></script>
 </body>
 </html>
