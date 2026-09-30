@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-30T09:35:41",
+    "updated": "2026-09-30T23:58:07",
     "timeZone": "Europe/Oslo",
     "version": "2.4",
     "nextEarningsDate": "2026-10-29"
@@ -10,23 +10,23 @@
       "company": "McDonalds",
       "ticker": "MCD",
       "shares": 4,
-      "stockValueNOK": 8962.369756347656,
+      "stockValueNOK": 8868.650349755859,
       "fundValueNOK": 66660,
       "equityFundValueNOK": 0,
       "fixedIncomeFundValueNOK": 66660,
       "cashNOK": 895,
-      "totalValueNOK": 76517.36975634766,
+      "totalValueNOK": 76423.65034975586,
       "allocation": {
-        "stockPct": 0.11712856551246215,
-        "fundPct": 0.8711747438818632,
+        "stockPct": 0.1160458877476819,
+        "fundPct": 0.8722430778290212,
         "equityFundPct": 0,
-        "fixedIncomeFundPct": 0.8711747438818632,
-        "cashPct": 0.01169669060567458
+        "fixedIncomeFundPct": 0.8722430778290212,
+        "cashPct": 0.01171103442329694
       },
       "stockPerformance": {
         "costNOK": 9174.165599999998,
-        "gainNOK": -211.79584365234223,
-        "returnPct": -0.02308611517240786
+        "gainNOK": -305.5152502441397,
+        "returnPct": -0.033301693425300684
       },
       "fundPerformance": {
         "startDate": "2026-09-24",
@@ -89,11 +89,11 @@
   },
   "market": {
     "latest": {
-      "date": "2026-09-29",
-      "mcdUSD": 233.97999572753906,
-      "usdNok": 9.576,
-      "mcdNOK": 2240.592439086914,
-      "sp500": 7670.83984375,
+      "date": "2026-09-30",
+      "mcdUSD": 230.94000244140625,
+      "usdNok": 9.6006,
+      "mcdNOK": 2217.1625874389647,
+      "sp500": 7651.5400390625,
       "ticker2": null,
       "ticker2FxNok": null,
       "ticker2NOK": null
@@ -6978,6 +6978,16 @@
         "ticker2": null,
         "ticker2FxNok": null,
         "ticker2NOK": null
+      },
+      {
+        "date": "2026-09-30",
+        "mcdUSD": 230.94000244140625,
+        "usdNok": 9.6006,
+        "mcdNOK": 2217.1625874389647,
+        "sp500": 7651.5400390625,
+        "ticker2": null,
+        "ticker2FxNok": null,
+        "ticker2NOK": null
       }
     ],
     "purchaseMarkers": [
@@ -6995,22 +7005,22 @@
     ],
     "performance": {
       "mcdUSD": {
-        "oneMonth": -0.11705661989607896,
-        "ytd": -0.2284508732016104,
-        "oneYear": -0.22776328172905624,
-        "total": -0.2122946774957628
+        "oneMonth": -0.12370040618693678,
+        "ytd": -0.23847525224348365,
+        "oneYear": -0.24005399549381456,
+        "total": -0.22252896647597287
       },
       "mcdNOK": {
-        "oneMonth": -0.09349467595767746,
-        "ytd": -0.2660161891674653,
-        "oneYear": -0.2576257063242824,
-        "total": -0.267457228899343
+        "oneMonth": -0.0993660471500778,
+        "ytd": -0.2736914501831683,
+        "oneYear": -0.2695077334259055,
+        "total": -0.2751174209776759
       },
       "sp500": {
-        "oneMonth": -0.005306171758280076,
-        "ytd": 0.11844764261686858,
-        "oneYear": 0.1515685421617312,
-        "total": 0.6173549794941295
+        "oneMonth": -0.0045016220158354825,
+        "ytd": 0.1156336324829863,
+        "oneYear": 0.1439913049864483,
+        "total": 0.6132857203451427
       }
     }
   },
@@ -7411,7 +7421,7 @@
       },
       {
         "VALUATION - STATUS": "Aksjekurs lokal",
-        "McDonalds": 233.97999572753906,
+        "McDonalds": 230.94000244140625,
         "Selskap 2": ""
       },
       {
@@ -7421,7 +7431,7 @@
       },
       {
         "VALUATION - STATUS": "Kurs NOK",
-        "McDonalds": 2240.592439086914,
+        "McDonalds": 2217.1625874389647,
         "Selskap 2": ""
       },
       {
@@ -7431,7 +7441,7 @@
       },
       {
         "VALUATION - STATUS": "P/E TTM",
-        "McDonalds": 19.007310782090908,
+        "McDonalds": 18.760357631308388,
         "Selskap 2": ""
       },
       {
