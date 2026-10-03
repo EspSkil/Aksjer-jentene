@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-03T10:54:00",
+    "updated": "2026-10-03T11:01:57",
     "timeZone": "Europe/Oslo",
     "version": "2.5",
     "nextEarningsDate": "2026-10-29",
@@ -68,14 +68,14 @@
       "fundValueNOK": 60848,
       "equityFundValueNOK": 0,
       "fixedIncomeFundValueNOK": 60848,
-      "cashNOK": 384,
-      "totalValueNOK": 70502.68045333862,
+      "cashNOK": 684,
+      "totalValueNOK": 70802.68045333862,
       "allocation": {
-        "stockPct": 0.1314940140392863,
-        "fundPct": 0.86305938453321,
+        "stockPct": 0.13093685710738476,
+        "fundPct": 0.8594024916909877,
         "equityFundPct": 0,
-        "fixedIncomeFundPct": 0.86305938453321,
-        "cashPct": 0.005446601427503823
+        "fixedIncomeFundPct": 0.8594024916909877,
+        "cashPct": 0.00966065120162759
       },
       "stockPerformance": {
         "costNOK": 9667.525,
@@ -105,8 +105,8 @@
           "stockValueNOK": 9270.680453338622,
           "equityFundValueNOK": 0,
           "fixedIncomeFundValueNOK": 60848,
-          "cashNOK": 384,
-          "totalValueNOK": 70502.68045333862
+          "cashNOK": 684,
+          "totalValueNOK": 70802.68045333862
         }
       ]
     }
@@ -10530,7 +10530,7 @@
       "Person": "Malin",
       "Fond": "Kontanter",
       "Type": "Kontanter",
-      "Verdi NOK": 384,
+      "Verdi NOK": 684,
       "Innskudd/uttak siden sist": 0,
       "Kommentar": "Oppdatert verdi"
     },
