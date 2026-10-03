@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f8f5f8">
   <title>Aksjer-jentene</title>
-  <link rel="stylesheet" href="style.css?v=5.2.0">
+  <link rel="stylesheet" href="style.css?v=5.3.0">
 </head>
 <body>
 <div class="app">
@@ -18,8 +18,8 @@
     <section class="page active" id="page-stock">
       <div class="intro">
         <div class="eyebrow">INVESTERINGEN</div>
-        <div class="stock-brand"><img src="assets/MCD.png" alt="McDonald’s logo" class="company-logo"><h2 id="stockPageTitle">Aksjen min</h2></div>
-        <p>Kursen vises i dollar. Avkastningen din i kroner påvirkes også av dollarkursen og gebyr.</p>
+        <div class="stock-brand"><img id="companyLogo" src="assets/MCD.png" alt="Selskapslogo" class="company-logo"><h2 id="stockPageTitle">Aksjen min</h2></div>
+        <p id="stockIntroText">Kursen vises i dollar. Avkastningen din i kroner påvirkes også av dollarkursen og gebyr.</p>
       </div>
 
       <article class="card" id="purchaseCard">
@@ -29,19 +29,19 @@
       </article>
 
       <div class="two-grid" id="marketMiniCards">
-        <article class="mini"><span>McDonald’s-aksjen</span><strong id="lastUsd">–</strong><small>kurs i dollar</small></article>
-        <article class="mini"><span>Dollar mot kroner</span><strong id="fx">–</strong><small>kroner per dollar</small></article>
+        <article class="mini"><span id="stockMiniLabel">McDonald’s-aksjen</span><strong id="lastUsd">–</strong><small id="stockMiniUnit">kurs i dollar</small></article>
+        <article class="mini"><span id="fxMiniLabel">Dollar mot kroner</span><strong id="fx">–</strong><small id="fxMiniUnit">kroner per dollar</small></article>
       </div>
 
       <article class="card" id="stockMainCard">
-        <div class="section-head"><div><span class="muted">Aksjekurs</span><h2 id="chartPrice">–</h2></div><div class="right"><span class="muted">Endring i valgt periode</span><strong id="periodReturn">–</strong><label class="switch-row"><span>Sammenlign med S&amp;P 500</span><input type="checkbox" id="spToggle"><i></i></label></div></div>
+        <div class="section-head"><div><span class="muted">Aksjekurs</span><h2 id="chartPrice">–</h2></div><div class="right"><span class="muted">Endring i valgt periode</span><strong id="periodReturn">–</strong><label class="switch-row"><span id="benchmarkToggleLabel">Sammenlign med S&amp;P 500</span><input type="checkbox" id="spToggle"><i></i></label></div></div>
         <div class="range-tabs stock-range-tabs"><button data-range="1M">1 MND</button><button class="active" data-range="YTD">HiÅ</button><button data-range="1Y">1 ÅR</button><button data-range="TOTAL">TOTAL</button></div>
         <div class="chart-box large"><svg id="priceChart" viewBox="0 0 700 330" preserveAspectRatio="none"></svg></div>
         <div class="chart-legend" id="stockLegend"><span><i class="line-dot"></i>MCD</span><span><i class="buy-dot"></i>Mitt kjøp</span></div><div id="comparisonResult" class="comparison-result"></div>
       </article>
 
       <article class="card fx-card" id="fxCard">
-        <div class="section-head"><div><div class="eyebrow">VALUTA</div><h2>USD/NOK</h2><p class="chart-help">Når dollaren blir dyrere, blir amerikanske aksjer mer verdt målt i kroner – og motsatt.</p></div><div class="right"><span class="muted">Nå</span><strong id="fxChartNow">–</strong><small id="fxPeriodReturn" class="metric-delta">–</small></div></div>
+        <div class="section-head"><div><div class="eyebrow">VALUTA</div><h2 id="fxTitle">USD/NOK</h2><p id="fxHelp" class="chart-help">Når dollaren blir dyrere, blir amerikanske aksjer mer verdt målt i kroner – og motsatt.</p></div><div class="right"><span class="muted">Nå</span><strong id="fxChartNow">–</strong><small id="fxPeriodReturn" class="metric-delta">–</small></div></div>
         <div class="range-tabs fx-range-tabs"><button data-fx-range="1M">1 MND</button><button class="active" data-fx-range="YTD">HiÅ</button><button data-fx-range="1Y">1 ÅR</button><button data-fx-range="TOTAL">TOTAL</button></div>
         <div class="chart-box fx-chart"><svg id="fxChart" viewBox="0 0 700 250" preserveAspectRatio="none"></svg></div>
       </article>
@@ -64,7 +64,7 @@
         <article class="mini"><span>Rentefond</span><strong id="fixedFundValue">–</strong><small id="fundReturnHome">–</small></article>
         <article class="mini"><span>Kontanter</span><strong id="cashValue">–</strong><small>tilgjengelig</small></article>
       </div>
-      <article class="card">
+      <article class="card" id="companyTrendCard">
         <div class="section-head"><div><div class="eyebrow">UTVIKLING</div><h2>Hvor har pengene vært plassert?</h2><p class="chart-help">Hovedlinjen viser total verdi. De tynnere linjene viser hvordan pengene er fordelt mellom plasseringene.</p></div></div>
         <div class="portfolio-legend"><span><i class="legend-total"></i>Total</span><span><i class="legend-stock"></i>Aksjer</span><span><i class="legend-equity"></i>Aksjefond</span><span><i class="legend-fixed"></i>Rentefond</span><span><i class="legend-cash"></i>Kontanter</span></div>
         <div class="chart-box portfolio-chart"><svg id="portfolioChart" viewBox="0 0 700 280" preserveAspectRatio="none"></svg></div>
@@ -89,7 +89,7 @@
         <div class="metric-tabs"><button class="active" data-metric="revenue">Omsetning</button><button data-metric="eps">Fortjeneste / aksje</button><button data-metric="operatingMargin">Margin</button></div>
         <div class="chart-box company-chart"><svg id="companyChart" viewBox="0 0 700 300" preserveAspectRatio="none"></svg></div>
       </article>
-      <article class="card">
+      <article class="card" id="companyKpiCard">
         <div class="eyebrow">HVORDAN GÅR RESTAURANTENE?</div>
         <div class="pulse-grid learning-pulse">
           <div><span>Salg i eksisterende restauranter – globalt</span><strong id="compSales">–</strong><small>Endring i restauranter som har vært åpne en stund</small></div>
@@ -98,17 +98,17 @@
           <div><span>Salg til lojalitetsmedlemmer</span><strong id="loyaltySales">–</strong><small>Siste 12 måneder</small></div>
         </div>
       </article>
-      <article class="card">
+      <article class="card" id="companyPeCard">
         <div class="section-head"><div><div class="eyebrow">ER AKSJEN DYR ELLER BILLIG?</div><h2>Pris / fortjeneste (P/E)</h2><p class="chart-help">P/E viser hvor mye markedet betaler for én dollar i årlig fortjeneste.</p></div><strong id="currentPE">–</strong></div>
         <div class="chart-box pe-chart"><svg id="peChart" viewBox="0 0 700 250" preserveAspectRatio="none"></svg></div><div class="chart-dates"><span id="peStart">–</span><span id="peEnd">–</span></div>
       </article>
-      <article class="card learning-box"><div class="eyebrow">TRE SPØRSMÅL Å HUSKE</div><p>① Vokser salget? &nbsp; ② Vokser overskuddet? &nbsp; ③ Hva betaler markedet for overskuddet?</p></article>
+      <article class="card learning-box" id="companyLearningCard"><div class="eyebrow">TRE SPØRSMÅL Å HUSKE</div><p>① Vokser salget? &nbsp; ② Vokser overskuddet? &nbsp; ③ Hva betaler markedet for overskuddet?</p></article>
     </section>
   </main>
 
   <nav class="bottom-nav"><button class="nav active" data-page="stock"><span>↗</span>Aksjen</button><button class="nav" data-page="home"><span>⌂</span>Portefølje</button><button class="nav" data-page="company"><span>▦</span>Selskapet</button></nav>
 </div>
 <div class="loading" id="loading"><div class="spinner"></div><span>Henter porteføljen…</span></div>
-<script src="script.js?v=5.2.0"></script>
+<script src="script.js?v=5.3.0"></script>
 </body>
 </html>
