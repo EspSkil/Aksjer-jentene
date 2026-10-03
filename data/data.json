@@ -1,9 +1,13 @@
 {
   "meta": {
-    "updated": "2026-10-03T10:38:43",
+    "updated": "2026-10-03T10:54:00",
     "timeZone": "Europe/Oslo",
-    "version": "2.4",
-    "nextEarningsDate": "2026-10-29"
+    "version": "2.5",
+    "nextEarningsDate": "2026-10-29",
+    "nextEarningsDates": {
+      "MCD": "2026-10-29",
+      "ADS": "2026-10-29"
+    }
   },
   "portfolio": {
     "Elise": {
@@ -11,17 +15,17 @@
       "ticker": "MCD",
       "shares": 4,
       "stockValueNOK": 8950.397440441895,
-      "fundValueNOK": 66660,
+      "fundValueNOK": 66535,
       "equityFundValueNOK": 0,
-      "fixedIncomeFundValueNOK": 66660,
-      "cashNOK": 895,
-      "totalValueNOK": 76505.3974404419,
+      "fixedIncomeFundValueNOK": 66535,
+      "cashNOK": 825,
+      "totalValueNOK": 76310.3974404419,
       "allocation": {
-        "stockPct": 0.11699040512023509,
-        "fundPct": 0.871311073861078,
+        "stockPct": 0.1172893568982841,
+        "fundPct": 0.8718995344235847,
         "equityFundPct": 0,
-        "fixedIncomeFundPct": 0.871311073861078,
-        "cashPct": 0.01169852101868684
+        "fixedIncomeFundPct": 0.8718995344235847,
+        "cashPct": 0.010811108678131169
       },
       "stockPerformance": {
         "costNOK": 9174.165599999998,
@@ -30,12 +34,12 @@
       },
       "fundPerformance": {
         "startDate": "2026-09-24",
-        "latestDate": "2026-09-24",
+        "latestDate": "2026-10-03",
         "startValueNOK": 66660,
-        "currentValueNOK": 66660,
+        "currentValueNOK": 66535,
         "netFlowsNOK": 0,
-        "gainNOK": 0,
-        "returnPct": null
+        "gainNOK": -125,
+        "returnPct": -0.0018751875187518752
       },
       "history": [
         {
@@ -45,6 +49,14 @@
           "fixedIncomeFundValueNOK": 66660,
           "cashNOK": 895,
           "totalValueNOK": 76554.1755222168
+        },
+        {
+          "date": "2026-10-03",
+          "stockValueNOK": 8950.397440441895,
+          "equityFundValueNOK": 0,
+          "fixedIncomeFundValueNOK": 66535,
+          "cashNOK": 825,
+          "totalValueNOK": 76310.3974404419
         }
       ]
     },
@@ -52,32 +64,32 @@
       "company": "Adidas",
       "ticker": "ADS",
       "shares": 6,
-      "stockValueNOK": 0,
-      "fundValueNOK": 60800,
+      "stockValueNOK": 9270.680453338622,
+      "fundValueNOK": 60848,
       "equityFundValueNOK": 0,
-      "fixedIncomeFundValueNOK": 60800,
-      "cashNOK": 10000,
-      "totalValueNOK": 70800,
+      "fixedIncomeFundValueNOK": 60848,
+      "cashNOK": 384,
+      "totalValueNOK": 70502.68045333862,
       "allocation": {
-        "stockPct": 0,
-        "fundPct": 0.8587570621468926,
+        "stockPct": 0.1314940140392863,
+        "fundPct": 0.86305938453321,
         "equityFundPct": 0,
-        "fixedIncomeFundPct": 0.8587570621468926,
-        "cashPct": 0.14124293785310735
+        "fixedIncomeFundPct": 0.86305938453321,
+        "cashPct": 0.005446601427503823
       },
       "stockPerformance": {
         "costNOK": 9667.525,
-        "gainNOK": -9667.525,
-        "returnPct": -1
+        "gainNOK": -396.84454666137754,
+        "returnPct": -0.04104923924803686
       },
       "fundPerformance": {
         "startDate": "2026-09-24",
-        "latestDate": "2026-09-24",
+        "latestDate": "2026-10-03",
         "startValueNOK": 60800,
-        "currentValueNOK": 60800,
+        "currentValueNOK": 60848,
         "netFlowsNOK": 0,
-        "gainNOK": 0,
-        "returnPct": null
+        "gainNOK": 48,
+        "returnPct": 0.0007894736842105263
       },
       "history": [
         {
@@ -87,6 +99,14 @@
           "fixedIncomeFundValueNOK": 60800,
           "cashNOK": 10000,
           "totalValueNOK": 70800
+        },
+        {
+          "date": "2026-10-03",
+          "stockValueNOK": 9270.680453338622,
+          "equityFundValueNOK": 0,
+          "fixedIncomeFundValueNOK": 60848,
+          "cashNOK": 384,
+          "totalValueNOK": 70502.68045333862
         }
       ]
     }
@@ -10486,6 +10506,42 @@
       "Verdi NOK": 10000,
       "Innskudd/uttak siden sist": 0,
       "Kommentar": "Startverdi"
+    },
+    {
+      "Dato": "2026-10-03",
+      "Person": "Elise",
+      "Fond": "Rentefond",
+      "Type": "Rentefond",
+      "Verdi NOK": 66535,
+      "Innskudd/uttak siden sist": 0,
+      "Kommentar": "Oppdatert verdi"
+    },
+    {
+      "Dato": "2026-10-03",
+      "Person": "Elise",
+      "Fond": "Kontanter",
+      "Type": "Kontanter",
+      "Verdi NOK": 825,
+      "Innskudd/uttak siden sist": 0,
+      "Kommentar": "Oppdatert verdi"
+    },
+    {
+      "Dato": "2026-10-03",
+      "Person": "Malin",
+      "Fond": "Kontanter",
+      "Type": "Kontanter",
+      "Verdi NOK": 384,
+      "Innskudd/uttak siden sist": 0,
+      "Kommentar": "Oppdatert verdi"
+    },
+    {
+      "Dato": "2026-10-03",
+      "Person": "Malin",
+      "Fond": "Likviditetsfond",
+      "Type": "Rentefond",
+      "Verdi NOK": 60848,
+      "Innskudd/uttak siden sist": 0,
+      "Kommentar": "Oppdatert verdi"
     }
   ],
   "dividends": []
