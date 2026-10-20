@@ -53,12 +53,66 @@ function renderMarketChanges(){const h=DATA?.market?.history||[],c=cfg();addChan
 function changeDays(h,key,days){const a=h.filter(x=>x.date&&valid(x[key]));if(a.length<2)return null;const last=a[a.length-1],cut=new Date(last.date+'T12:00:00');cut.setDate(cut.getDate()-days);let first=a[0];for(let i=a.length-1;i>=0;i--){if(new Date(a[i].date+'T12:00:00')<=cut){first=a[i];break}}return N(first[key])?N(last[key])/N(first[key])-1:null}
 function addChange(id,day,month){const el=$(id);if(!el)return;const box=el.parentElement;let e=box.querySelector('.market-change');if(!e){e=document.createElement('div');e.className='market-change';box.appendChild(e)}e.innerHTML=`<span class="${N(day)>=0?'positive':'negative'}">${N(day)>=0?'▲':'▼'} ${pct(Math.abs(N(day)))} dag</span><span class="${N(month)>=0?'positive':'negative'}">${N(month)>=0?'▲':'▼'} ${pct(Math.abs(N(month)))} 1 mnd</span>`}
 function renderPurchase(p){const c=cfg(),perf=p.stockPerformance||{};setReturn('purchaseReturn',perf.returnPct);const gain=$('purchaseGain');gain.textContent=nok(perf.gainNOK);gain.classList.remove('positive','negative');if(valid(perf.gainNOK))gain.classList.add(N(perf.gainNOK)>=0?'positive':'negative');const buys=(DATA?.market?.purchaseMarkers||[]).filter(x=>x.person===currentPerson&&x.ticker===p.ticker);if(!buys.length){$('purchaseDetails').innerHTML='<div class="detail"><span>Kjøp</span><strong>Ingen registrert handel</strong></div>';return}const b=buys[buys.length-1],rows=[['Dato',formatDate(b.date)],['Antall',num(b.shares,0)],['Kjøpskurs',c.symbol+' '+num(b.priceLocal)],[c.currency+'/NOK',num(b.fxNOK,2)],['Kjøpsverdi',nok(b.purchaseValueNOK)],['Gebyr',nok(b.feeNOK)],['Kostpris inkl. gebyr',nok(perf.costNOK)]];$('purchaseDetails').innerHTML=rows.map(r=>`<div class="detail"><span>${r[0]}</span><strong>${r[1]}</strong></div>`).join('')}
-function renderCompany(){const ids=['companyQuarterCard','companyTrendCard','companyKpiCard','companyPeCard','companyLearningCard'];if(currentPerson!=='Elise'){ids.forEach(id=>{if($(id))$(id).style.display='none'});setText('companyPageTitle','Adidas');const intro=document.querySelector('#page-company .intro p');if(intro)intro.textContent='Regnskapstall og nøkkeltall for Adidas legges inn i neste steg.';return}ids.forEach(id=>{if($(id))$(id).style.display='block'});const intro=document.querySelector('#page-company .intro p');if(intro)intro.textContent='Hva tjener McDonald’s, hvordan går restaurantene – og hva betaler markedet for overskuddet?';const inc=(DATA?.financials?.incomeMCD||[]).filter(x=>/^Q\d/.test(x.period));if(!inc.length)return;const q=inc[inc.length-1],yearAgo=findYearAgo(inc,q.period);setText('latestQuarter',prettyPeriod(q.period));setText('companyTicker',DATA?.portfolio?.[currentPerson]?.ticker||'MCD');setText('revenue',billionUSD(q.revenue));setPlainDelta('revenueGrowth',q.revenueGrowthYoY,'fra samme kvartal i fjor');setText('opIncome',billionUSD(q.operatingIncome));setPlainDelta('opGrowth',q.operatingIncomeGrowthYoY,'fra samme kvartal i fjor');setText('eps','$'+num(q.eps));setPlainDelta('epsGrowth',q.epsGrowthYoY,'fra samme kvartal i fjor');setText('margin',pct(q.operatingMargin));const md=yearAgo&&valid(yearAgo.operatingMargin)?N(q.operatingMargin)-N(yearAgo.operatingMargin):null;const me=$('marginChange');if(me){me.classList.remove('positive','negative');if(valid(md)){me.textContent=`${num(Math.abs(md)*100,1)} prosentpoeng ${md>=0?'høyere':'lavere'} enn samme kvartal i fjor`;me.classList.add(md>=0?'positive':'negative')}else me.textContent='–'}renderCompanyChart();renderKpi();renderPE()}
+// Keep preliminary Q3 data out of complete-quarter EPS/earnings comparisons.
+const financialNumber=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
+const companyIncome=()=>DATA?.financials?.[currentPerson==='Malin'?'incomeADS':'incomeMCD']||[];
+function latestCompanyQuarter(){
+ const rows=companyIncome().filter(x=>/^Q\d 20\d{2}$/.test(x.period)&&financialNumber(x.revenue)&&financialNumber(x.eps));
+ return rows[rows.length-1]||null;
+}
+function yoyMetric(q,prior,key,sourceKey){
+ if(financialNumber(q?.[sourceKey]))return Number(q[sourceKey]);
+ if(!prior||!financialNumber(q?.[key])||!financialNumber(prior?.[key])||Number(prior[key])===0)return null;
+ return Number(q[key])/Number(prior[key])-1;
+}
+function renderCompany(){
+ const ads=currentPerson==='Malin',ids=['companyQuarterCard','companyTrendCard','companyKpiCard','companyPeCard','companyLearningCard'];
+ ids.forEach(id=>{if($(id))$(id).style.display=(ads&&id==='companyPeCard')?'none':'block'});
+ setText('companyPageTitle',ads?'Adidas':'McDonald’s');
+ const intro=document.querySelector('#page-company .intro p');
+ if(intro)intro.textContent=ads?'Hvordan utvikler salget, fortjenesten og lageret seg hos Adidas?':'Hva tjener McDonald’s, hvordan går restaurantene – og hva betaler markedet for overskuddet?';
+ document.querySelector('#companyKpiCard .eyebrow').textContent=ads?'HVORDAN GÅR ADIDAS?':'HVORDAN GÅR RESTAURANTENE?';
+ document.querySelector('#companyQuarterCard .metrics > div:first-child .explain').textContent=ads?'Adidas sitt salg dette kvartalet':'Pengene McDonald’s fikk inn i kvartalet';
+ document.querySelector('#companyLearningCard p').textContent=ads?'① Vokser salget?   ② Blir Adidas mer lønnsomt?   ③ Øker lageret raskere enn salget?':'① Vokser salget?   ② Vokser overskuddet?   ③ Hva betaler markedet for overskuddet?';
+ const inc=companyIncome().filter(x=>/^Q\d 20\d{2}$/.test(x.period));
+ const q=latestCompanyQuarter();
+ if(!q){setText('latestQuarter','Ingen regnskapstall');$('companyChart').innerHTML='';return}
+ const yearAgo=findYearAgo(inc,q.period),money=v=>financialNumber(v)?cfg().symbol+num(Number(v)/1000,1)+' milliarder':'–';
+ setText('latestQuarter',prettyPeriod(q.period));setText('companyTicker',ads?'ADS':'MCD');
+ setText('revenue',money(q.revenue));setPlainDelta('revenueGrowth',yoyMetric(q,yearAgo,'revenue','revenueGrowthYoY'),'fra samme kvartal i fjor');
+ setText('opIncome',money(q.operatingIncome));setPlainDelta('opGrowth',yoyMetric(q,yearAgo,'operatingIncome','operatingIncomeGrowthYoY'),'fra samme kvartal i fjor');
+ setText('eps',financialNumber(q.eps)?cfg().symbol+num(q.eps):'–');setPlainDelta('epsGrowth',yoyMetric(q,yearAgo,'eps','epsGrowthYoY'),'fra samme kvartal i fjor');
+ setText('margin',financialNumber(q.operatingMargin)?pct(q.operatingMargin):'–');
+ const md=yearAgo&&financialNumber(yearAgo.operatingMargin)&&financialNumber(q.operatingMargin)?Number(q.operatingMargin)-Number(yearAgo.operatingMargin):null;
+ const me=$('marginChange');if(me){me.classList.remove('positive','negative');if(md!==null){me.textContent=`${num(Math.abs(md)*100,1)} prosentpoeng ${md>=0?'høyere':'lavere'} enn samme kvartal i fjor`;me.classList.add(md>=0?'positive':'negative')}else me.textContent='–'}
+ renderCompanyChart();renderKpi();if(!ads)renderPE();
+}
 function setPlainDelta(id,v,label){const e=$(id);if(!e)return;e.classList.remove('positive','negative');e.textContent=valid(v)?`${N(v)>=0?'↑':'↓'} ${pct(Math.abs(N(v)))} ${label}`:'–';if(valid(v))e.classList.add(N(v)>=0?'positive':'negative')}
 function findYearAgo(rows,period){const m=String(period).match(/^Q(\d)\s+(\d{4})$/);if(!m)return null;return rows.find(x=>x.period===`Q${m[1]} ${N(m[2])-1}`)||null}
 function prettyPeriod(p){return String(p).replace(/^Q(\d)\s+(\d{4})$/,'Q$1 $2')}
-function renderCompanyChart(){const rows=(DATA?.financials?.incomeMCD||[]).filter(x=>/^Q\d/.test(x.period)&&valid(x[companyMetric])).slice(-6);drawBars('companyChart',rows,companyMetric)}
-function renderKpi(){const rows=(DATA?.kpi?.mcd||[]).filter(x=>/^Q\d/.test(x.period)),q=rows[rows.length-1]||{};setText('compSales',pct(q.globalComparableSales));setText('usCompSales',pct(q.usComparableSales));setText('loyaltyUsers',valid(q.loyaltyUsersM)?num(q.loyaltyUsersM,0)+' millioner':'–');setText('loyaltySales',valid(q.loyaltySalesTtmBn)?'$'+num(q.loyaltySalesTtmBn,0)+' milliarder':'–')}
+function renderCompanyChart(){const rows=companyIncome().filter(x=>/^Q\d 20\d{2}$/.test(x.period)&&financialNumber(x[companyMetric])&&financialNumber(x.eps)).slice(-6);drawBars('companyChart',rows,companyMetric)}
+function renderKpi(){
+ const ads=currentPerson==='Malin',box=$('companyKpiCard');
+ const labels=box.querySelectorAll('.pulse-grid > div > span');
+ const explanations=box.querySelectorAll('.pulse-grid > div > small');
+ if(ads){
+  const descriptions=[['Omsetningsvekst','Sammenlignet med samme kvartal året før'],['Driftsmargin','Andel av omsetningen som blir driftsresultat'],['Lagervekst','Endring i lageret fra samme kvartal i fjor'],['Fri kontantstrøm','Penger fra drift minus investeringer i kvartalet']];
+  descriptions.forEach((d,i)=>{labels[i].textContent=d[0];explanations[i].textContent=d[1]});
+  const q=latestCompanyQuarter(),k=(DATA?.kpi?.ads||[]).find(x=>x.period===q?.period)||{},
+        b=(DATA?.financials?.balanceADS||[]).find(x=>x.period===q?.period)||{},
+        cf=(DATA?.financials?.cashFlowADS||[]).find(x=>x.period===q?.period)||{};
+  const growth=financialNumber(k.reportedSalesGrowth)?k.reportedSalesGrowth:yoyMetric(q,findYearAgo(companyIncome(),q?.period),'revenue','revenueGrowthYoY');
+  const inventory=financialNumber(k.inventoryGrowth)?k.inventoryGrowth:null;
+  setText('compSales',growth!==null?pct(growth):'–');setText('usCompSales',financialNumber(q?.operatingMargin)?pct(q.operatingMargin):'–');
+  setText('loyaltyUsers',inventory!==null?pct(inventory):'–');
+  setText('loyaltySales',financialNumber(cf.freeCashFlow)?'€'+num(cf.freeCashFlow,0)+' mill.':'–');
+ }else{
+  const descriptions=[['Salg i eksisterende restauranter – globalt','Endring i restauranter som har vært åpne en stund'],['Salg i eksisterende restauranter – USA','Utviklingen i hjemmemarkedet'],['Aktive lojalitetsbrukere','Brukere de siste 90 dagene'],['Salg til lojalitetsmedlemmer','Siste 12 måneder']];
+  descriptions.forEach((d,i)=>{labels[i].textContent=d[0];explanations[i].textContent=d[1]});
+  const rows=(DATA?.kpi?.mcd||[]).filter(x=>/^Q\d/.test(x.period)),q=rows[rows.length-1]||{};
+  setText('compSales',pct(q.globalComparableSales));setText('usCompSales',pct(q.usComparableSales));setText('loyaltyUsers',valid(q.loyaltyUsersM)?num(q.loyaltyUsersM,0)+' millioner':'–');setText('loyaltySales',valid(q.loyaltySalesTtmBn)?'$'+num(q.loyaltySalesTtmBn,0)+' milliarder':'–');
+ }
+}
 function renderPE(){const rows=(DATA?.valuation?.history||[]).filter(x=>valid(x.peTtm)),cur=rows[rows.length-1];setText('currentPE',cur?num(cur.peTtm,1)+'×':'–');drawLine('peChart',rows,'peTtm',[],'chart-line');setText('peStart',rows[0]?formatDate(rows[0].date):'–');setText('peEnd',cur?formatDate(cur.date):'–')}
 function renderPortfolioChart(p){const rows=(p.history||[]).filter(x=>x.date&&valid(x.totalValueNOK));const svg=$('portfolioChart');if(!svg)return;if(!rows.length){svg.innerHTML='';setText('portfolioHistoryNote','Historikken starter når første måling er registrert.');return}drawMultiPortfolio(svg,rows);setText('portfolioHistoryNote',rows.length<2?'Første målepunkt er registrert. Kurven blir synlig når neste månedsverdi legges inn.':'Kurvene viser verdi. Flytting av penger mellom plasseringer påvirker derfor også linjene.')}
 function niceStep(span,targetTicks=4){if(!Number.isFinite(span)||span<=0)return 1;const raw=span/Math.max(targetTicks-1,1),power=Math.pow(10,Math.floor(Math.log10(raw))),fraction=raw/power;let niceFraction;if(fraction<=1)niceFraction=1;else if(fraction<=2)niceFraction=2;else if(fraction<=2.5)niceFraction=2.5;else if(fraction<=5)niceFraction=5;else niceFraction=10;return niceFraction*power}
@@ -70,7 +124,7 @@ function drawCompareChart(rows,markers,c=cfg()){const svg=$('priceChart');if(!sv
 function drawLine(id,rows,key,markers=[],lineClass='chart-line',c=cfg()){const svg=$(id);if(!svg||rows.length<2){if(svg)svg.innerHTML='';return}const w=700,h=id==='priceChart'?330:250,L=78,R=18,T=18,B=46,vals=rows.map(r=>N(r[key])).filter(Number.isFinite),min0=Math.min(...vals),max0=Math.max(...vals),pad=(max0-min0||Math.abs(max0)||1)*.06,scale=niceScale(min0-pad,max0+pad,5,false),min=scale.min,max=scale.max,rg=max-min||1,x=i=>L+(w-L-R)*i/(rows.length-1),y=v=>T+(h-T-B)*(1-(N(v)-min)/rg);let html='';scale.ticks.slice().reverse().forEach(v=>{const Y=y(v);html+=`<line class="grid-line" x1="${L}" y1="${Y}" x2="${w-R}" y2="${Y}"/><text class="axis-label" text-anchor="end" x="${L-10}" y="${Y+6}">${axisValue(key,v,c)}</text>`});html+=`<polyline class="${lineClass}" points="${rows.map((r,i)=>x(i)+','+y(r[key])).join(' ')}"/>`;addXAxis(rows,x,h,s=>html+=s);markers.forEach(m=>{const i=rows.findIndex(r=>r.date===m.date);if(i>=0){const X=x(i),Y=y(rows[i][key]);html+=`<line class="buy-line" x1="${X}" y1="${T}" x2="${X}" y2="${h-B}"/><circle class="buy-point" cx="${X}" cy="${Y}" r="7"/><text class="buy-label" x="${Math.min(X+9,w-90)}" y="${Math.max(Y-12,25)}">Kjøp</text>`}});svg.innerHTML=html}
 function addXAxis(rows,x,h,add){const idx=[0,Math.round((rows.length-1)*.25),Math.round((rows.length-1)*.5),Math.round((rows.length-1)*.75),rows.length-1];idx.forEach((n,i)=>add(`<text class="axis-label" text-anchor="${i===0?'start':i===4?'end':'middle'}" x="${x(n)}" y="${h-8}">${shortDate(rows[n].date)}</text>`))}
 function drawBars(id,rows,key){const svg=$(id);if(!svg||!rows.length){if(svg)svg.innerHTML='';return}const w=700,h=300,L=78,R=18,T=76,B=50,vals=rows.map(r=>N(r[key])).filter(Number.isFinite),max0=Math.max(...vals),min0=Math.min(0,...vals),scale=niceScale(min0,max0*1.08,5,true),max=scale.max,min=scale.min,rg=max-min||1,plotH=h-T-B,gap=(w-L-R)/rows.length,bw=gap*.60;let html='';scale.ticks.slice().reverse().forEach(v=>{const Y=T+plotH*(max-v)/rg;html+=`<line class="grid-line" x1="${L}" y1="${Y}" x2="${w-R}" y2="${Y}"/><text class="axis-label" text-anchor="end" x="${L-10}" y="${Y+6}">${barValue(key,v)}</text>`});rows.forEach((r,i)=>{const v=N(r[key]),baseY=T+plotH*(max-0)/rg,y=T+plotH*(max-v)/rg,bh=Math.abs(baseY-y),x=L+i*gap+(gap-bw)/2,topY=Math.min(y,baseY),prev=i>0?rows[i-1]:null;let ch=null;if(prev&&valid(prev[key])&&N(prev[key])!==0){ch=key==='operatingMargin'?N(r[key])-N(prev[key]):N(r[key])/N(prev[key])-1}html+=`<rect x="${x}" y="${topY}" width="${bw}" height="${Math.max(bh,2)}" rx="7" fill="#7b2cbf"/><text class="bar-value" text-anchor="middle" x="${x+bw/2}" y="${Math.max(topY-30,31)}">${barValue(key,v)}</text>`;if(valid(ch)){const txt=key==='operatingMargin'?`${ch>=0?'▲':'▼'} ${num(Math.abs(ch)*100,1)} pp`:`${ch>=0?'▲':'▼'} ${pct(Math.abs(ch))}`;html+=`<text class="bar-change ${ch>=0?'svg-positive':'svg-negative'}" text-anchor="middle" x="${x+bw/2}" y="${Math.max(topY-11,52)}">${txt}</text>`}html+=`<text class="axis-label" text-anchor="middle" x="${x+bw/2}" y="${h-13}">${r.period.replace(' 20','’')}</text>`});svg.innerHTML=html}
-function barValue(key,v){if(key==='revenue')return '$'+num(v/1000,1)+' mrd';if(key==='eps')return '$'+num(v,2);if(key==='operatingMargin')return num(v*100,1)+'%';return num(v,1)}
+function barValue(key,v){if(key==='revenue')return cfg().symbol+num(v/1000,1)+' mrd';if(key==='eps')return cfg().symbol+num(v,2);if(key==='operatingMargin')return num(v*100,1)+'%';return num(v,1)}
 function axisValue(key,v,c=cfg()){if(key===c.priceKey)return c.symbol+Math.round(v);if(key===c.fxKey)return num(v,2);if(key==='peTtm')return num(v,1)+'×';return num(v,1)}
 function shortDate(s){const d=new Date(String(s).slice(0,10)+'T12:00:00');return isNaN(d)?String(s):new Intl.DateTimeFormat('nb-NO',{month:'short',year:'2-digit'}).format(d)}
 function formatDate(s){if(!s)return'–';const d=new Date(String(s).slice(0,10)+'T12:00:00');return isNaN(d)?String(s):new Intl.DateTimeFormat('nb-NO',{day:'2-digit',month:'short',year:'numeric'}).format(d)}
