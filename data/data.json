@@ -1,8 +1,8 @@
 {
   "meta": {
-    "updated": "2026-10-19T23:58:11",
+    "updated": "2026-10-20T20:49:30",
     "timeZone": "Europe/Oslo",
-    "version": "2.5",
+    "version": "2.6",
     "nextEarningsDate": "2026-10-29",
     "nextEarningsDates": {
       "MCD": "2026-10-29",
@@ -10258,6 +10258,444 @@
         "freeCashFlow": 3706,
         "dividendsPaid": -2640
       }
+    ],
+    "incomeADS": [
+      {
+        "period": "FY2021",
+        "revenue": 21234,
+        "costOfSales": 10469,
+        "grossProfit": 10765,
+        "grossMargin": 0.5069699538476029,
+        "operatingIncome": 1986,
+        "operatingMargin": 0.09352924554959027,
+        "netIncome": 2116,
+        "eps": 7.47,
+        "revenueGrowthYoY": null,
+        "operatingIncomeGrowthYoY": null,
+        "epsGrowthYoY": null
+      },
+      {
+        "period": "FY2022",
+        "revenue": 22511,
+        "costOfSales": 11867,
+        "grossProfit": 10644,
+        "grossMargin": 0.4728355026431522,
+        "operatingIncome": 669,
+        "operatingMargin": 0.029718804140198125,
+        "netIncome": 612,
+        "eps": 1.25,
+        "revenueGrowthYoY": 0.060139399076952094,
+        "operatingIncomeGrowthYoY": -0.6631419939577039,
+        "epsGrowthYoY": -0.8326639892904953
+      },
+      {
+        "period": "FY2023",
+        "revenue": 21427,
+        "costOfSales": 11243,
+        "grossProfit": 10184,
+        "grossMargin": 0.4752881878004387,
+        "operatingIncome": 268,
+        "operatingMargin": 0.01250758388948523,
+        "netIncome": -75,
+        "eps": -0.67,
+        "revenueGrowthYoY": -0.048154235706987736,
+        "operatingIncomeGrowthYoY": -0.5994020926756353,
+        "epsGrowthYoY": -1.536
+      },
+      {
+        "period": "FY2024",
+        "revenue": 23683,
+        "costOfSales": 11658,
+        "grossProfit": 12026,
+        "grossMargin": 0.5077903981759068,
+        "operatingIncome": 1337,
+        "operatingMargin": 0.05645399653760081,
+        "netIncome": 764,
+        "eps": 4.24,
+        "revenueGrowthYoY": 0.10528772109954732,
+        "operatingIncomeGrowthYoY": 3.9888059701492535,
+        "epsGrowthYoY": -7.3283582089552235
+      },
+      {
+        "period": "FY2025",
+        "revenue": 24811,
+        "costOfSales": 12006,
+        "grossProfit": 12804,
+        "grossMargin": 0.5160614243682238,
+        "operatingIncome": 2056,
+        "operatingMargin": 0.08286647051710935,
+        "netIncome": 1340,
+        "eps": 7.46,
+        "revenueGrowthYoY": 0.04762910104294216,
+        "operatingIncomeGrowthYoY": 0.537771129394166,
+        "epsGrowthYoY": 0.7594339622641508
+      },
+      {
+        "period": "Q1 2025",
+        "revenue": 6153,
+        "costOfSales": 2948,
+        "grossProfit": 3205,
+        "grossMargin": 0.5208841215667154,
+        "operatingIncome": 610,
+        "operatingMargin": 0.09913863156183975,
+        "netIncome": 428,
+        "eps": 2.44,
+        "revenueGrowthYoY": null,
+        "operatingIncomeGrowthYoY": null,
+        "epsGrowthYoY": null
+      },
+      {
+        "period": "Q2 2025",
+        "revenue": 5952,
+        "costOfSales": 2875,
+        "grossProfit": 3077,
+        "grossMargin": 0.5169690860215054,
+        "operatingIncome": 546,
+        "operatingMargin": 0.09173387096774194,
+        "netIncome": 369,
+        "eps": 2.03,
+        "revenueGrowthYoY": null,
+        "operatingIncomeGrowthYoY": null,
+        "epsGrowthYoY": null
+      },
+      {
+        "period": "Q3 2025",
+        "revenue": 6630,
+        "costOfSales": 3195,
+        "grossProfit": 3435,
+        "grossMargin": 0.5180995475113123,
+        "operatingIncome": 736,
+        "operatingMargin": 0.11101055806938159,
+        "netIncome": 461,
+        "eps": 2.57,
+        "revenueGrowthYoY": null,
+        "operatingIncomeGrowthYoY": null,
+        "epsGrowthYoY": null
+      },
+      {
+        "period": "Q4 2025",
+        "revenue": 6076,
+        "costOfSales": 2988,
+        "grossProfit": 3088,
+        "grossMargin": 0.5082290980908493,
+        "operatingIncome": 164,
+        "operatingMargin": 0.026991441737985518,
+        "netIncome": 81,
+        "eps": 0.42,
+        "revenueGrowthYoY": null,
+        "operatingIncomeGrowthYoY": null,
+        "epsGrowthYoY": null
+      },
+      {
+        "period": "Q1 2026",
+        "revenue": 6592,
+        "costOfSales": 3223,
+        "grossProfit": 3369,
+        "grossMargin": 0.5110740291262136,
+        "operatingIncome": 705,
+        "operatingMargin": 0.10694781553398058,
+        "netIncome": 482,
+        "eps": 2.7,
+        "revenueGrowthYoY": 0.07134731025516006,
+        "operatingIncomeGrowthYoY": 0.15573770491803285,
+        "epsGrowthYoY": 0.10655737704918034
+      },
+      {
+        "period": "Q2 2026",
+        "revenue": 6743,
+        "costOfSales": 3203,
+        "grossProfit": 3540,
+        "grossMargin": 0.5249888773542933,
+        "operatingIncome": 574,
+        "operatingMargin": 0.08512531514162835,
+        "netIncome": 355,
+        "eps": 2.1,
+        "revenueGrowthYoY": 0.132896505376344,
+        "operatingIncomeGrowthYoY": 0.05128205128205132,
+        "epsGrowthYoY": 0.034482758620689724
+      },
+      {
+        "period": "Q3 2026 PRELIM",
+        "revenue": 7252,
+        "costOfSales": null,
+        "grossProfit": null,
+        "grossMargin": 0,
+        "operatingIncome": 1008,
+        "operatingMargin": 0.138996138996139,
+        "netIncome": null,
+        "eps": null,
+        "revenueGrowthYoY": 0.09,
+        "operatingIncomeGrowthYoY": null,
+        "epsGrowthYoY": null
+      }
+    ],
+    "balanceADS": [
+      {
+        "period": "FY2021",
+        "cash": 3828,
+        "inventories": 4009,
+        "receivables": 2175,
+        "totalCurrentAssets": 13944,
+        "totalAssets": 22137,
+        "totalLiabilities": 14300,
+        "equity": 7519,
+        "operatingWorkingCapital": null,
+        "netDebt": null
+      },
+      {
+        "period": "FY2022",
+        "cash": 798,
+        "inventories": 5973,
+        "receivables": 2529,
+        "totalCurrentAssets": 11732,
+        "totalAssets": 20296,
+        "totalLiabilities": 14945,
+        "equity": 4991,
+        "operatingWorkingCapital": 5594,
+        "netDebt": 6047
+      },
+      {
+        "period": "FY2023",
+        "cash": 1431,
+        "inventories": 4525,
+        "receivables": 1906,
+        "totalCurrentAssets": 9809,
+        "totalAssets": 18020,
+        "totalLiabilities": 13095,
+        "equity": 4580,
+        "operatingWorkingCapital": 4154,
+        "netDebt": 4518
+      },
+      {
+        "period": "FY2024",
+        "cash": 2455,
+        "inventories": 4989,
+        "receivables": 2413,
+        "totalCurrentAssets": 11904,
+        "totalAssets": 20655,
+        "totalLiabilities": 14787,
+        "equity": 5476,
+        "operatingWorkingCapital": 4306,
+        "netDebt": 3622
+      },
+      {
+        "period": "FY2025",
+        "cash": 1617,
+        "inventories": 5832,
+        "receivables": 2634,
+        "totalCurrentAssets": 11977,
+        "totalAssets": 20262,
+        "totalLiabilities": 14137,
+        "equity": 5776,
+        "operatingWorkingCapital": 5556,
+        "netDebt": 4331
+      },
+      {
+        "period": "Q1 2025",
+        "cash": 1432,
+        "inventories": 5072,
+        "receivables": 3137,
+        "totalCurrentAssets": 11521,
+        "totalAssets": 20091,
+        "totalLiabilities": 14004,
+        "equity": 5710,
+        "operatingWorkingCapital": 5461,
+        "netDebt": 4586
+      },
+      {
+        "period": "Q2 2025",
+        "cash": 768,
+        "inventories": 5261,
+        "receivables": 3132,
+        "totalCurrentAssets": 11234,
+        "totalAssets": 19499,
+        "totalLiabilities": 13944,
+        "equity": 5196,
+        "operatingWorkingCapital": 5651,
+        "netDebt": 5042
+      },
+      {
+        "period": "Q3 2025",
+        "cash": 1030,
+        "inventories": 5471,
+        "receivables": 3428,
+        "totalCurrentAssets": 11967,
+        "totalAssets": 20147,
+        "totalLiabilities": 14067,
+        "equity": 5699,
+        "operatingWorkingCapital": 6179,
+        "netDebt": 4787
+      },
+      {
+        "period": "Q4 2025",
+        "cash": 1617,
+        "inventories": 5832,
+        "receivables": 2634,
+        "totalCurrentAssets": 11977,
+        "totalAssets": 20262,
+        "totalLiabilities": 14137,
+        "equity": 5776,
+        "operatingWorkingCapital": 5556,
+        "netDebt": 4331
+      },
+      {
+        "period": "Q1 2026",
+        "cash": 873,
+        "inventories": 5788,
+        "receivables": 3492,
+        "totalCurrentAssets": 12280,
+        "totalAssets": 20454,
+        "totalLiabilities": 14105,
+        "equity": 5987,
+        "operatingWorkingCapital": 6588,
+        "netDebt": 5475
+      },
+      {
+        "period": "Q2 2026",
+        "cash": 1159,
+        "inventories": 5969,
+        "receivables": 3567,
+        "totalCurrentAssets": 12826,
+        "totalAssets": 21064,
+        "totalLiabilities": 14713,
+        "equity": 5956,
+        "operatingWorkingCapital": 6662,
+        "netDebt": 5193
+      },
+      {
+        "period": "Q3 2026 PRELIM",
+        "cash": null,
+        "inventories": null,
+        "receivables": null,
+        "totalCurrentAssets": null,
+        "totalAssets": null,
+        "totalLiabilities": null,
+        "equity": null,
+        "operatingWorkingCapital": null,
+        "netDebt": null
+      }
+    ],
+    "cashFlowADS": [
+      {
+        "period": "FY2021",
+        "netIncome": 2116,
+        "cashFromOperations": 3192,
+        "capex": -667,
+        "freeCashFlow": 2525,
+        "investingCashFlow": -424,
+        "financingCashFlow": -2991,
+        "dividendsPaid": -585
+      },
+      {
+        "period": "FY2022",
+        "netIncome": 612,
+        "cashFromOperations": -479,
+        "capex": -695,
+        "freeCashFlow": -1174,
+        "investingCashFlow": 495,
+        "financingCashFlow": -2963,
+        "dividendsPaid": -610
+      },
+      {
+        "period": "FY2023",
+        "netIncome": -75,
+        "cashFromOperations": 2550,
+        "capex": -504,
+        "freeCashFlow": 2046,
+        "investingCashFlow": -450,
+        "financingCashFlow": -1425,
+        "dividendsPaid": -125
+      },
+      {
+        "period": "FY2024",
+        "netIncome": 764,
+        "cashFromOperations": 2910,
+        "capex": -540,
+        "freeCashFlow": 2370,
+        "investingCashFlow": -356,
+        "financingCashFlow": -1559,
+        "dividendsPaid": -125
+      },
+      {
+        "period": "FY2025",
+        "netIncome": 1340,
+        "cashFromOperations": 751,
+        "capex": -477,
+        "freeCashFlow": 274,
+        "investingCashFlow": -404,
+        "financingCashFlow": -1103,
+        "dividendsPaid": -357
+      },
+      {
+        "period": "Q1 2025",
+        "netIncome": 428,
+        "cashFromOperations": -934,
+        "capex": -65,
+        "freeCashFlow": -999,
+        "investingCashFlow": 39,
+        "financingCashFlow": -111,
+        "dividendsPaid": 0
+      },
+      {
+        "period": "Q2 2025",
+        "netIncome": 369,
+        "cashFromOperations": 18,
+        "capex": -106,
+        "freeCashFlow": -88,
+        "investingCashFlow": -99,
+        "financingCashFlow": -532,
+        "dividendsPaid": -357
+      },
+      {
+        "period": "Q3 2025",
+        "netIncome": 461,
+        "cashFromOperations": 641,
+        "capex": -120,
+        "freeCashFlow": 521,
+        "investingCashFlow": -106,
+        "financingCashFlow": -252,
+        "dividendsPaid": 0
+      },
+      {
+        "period": "Q4 2025",
+        "netIncome": 81,
+        "cashFromOperations": 1026,
+        "capex": -186,
+        "freeCashFlow": 840,
+        "investingCashFlow": -238,
+        "financingCashFlow": -208,
+        "dividendsPaid": 0
+      },
+      {
+        "period": "Q1 2026",
+        "netIncome": 482,
+        "cashFromOperations": -350,
+        "capex": -72,
+        "freeCashFlow": -422,
+        "investingCashFlow": -44,
+        "financingCashFlow": -359,
+        "dividendsPaid": 0
+      },
+      {
+        "period": "Q2 2026",
+        "netIncome": 355,
+        "cashFromOperations": 994,
+        "capex": -100,
+        "freeCashFlow": 894,
+        "investingCashFlow": -30,
+        "financingCashFlow": -690,
+        "dividendsPaid": -491
+      },
+      {
+        "period": "Q3 2026 PRELIM",
+        "netIncome": null,
+        "cashFromOperations": null,
+        "capex": null,
+        "freeCashFlow": null,
+        "investingCashFlow": null,
+        "financingCashFlow": null,
+        "dividendsPaid": null
+      }
     ]
   },
   "kpi": {
@@ -10404,6 +10842,116 @@
         "loyaltySalesTtmBn": 40,
         "newRestaurantOpenings": null,
         "operatingMargin": 0.47
+      }
+    ],
+    "ads": [
+      {
+        "period": "FY2021",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": null,
+        "grossMargin": 0.5069699538476029,
+        "operatingMargin": 0.09352924554959027,
+        "inventoryGrowth": null,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "FY2022",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": 0.060139399076952094,
+        "grossMargin": 0.4728355026431522,
+        "operatingMargin": 0.029718804140198125,
+        "inventoryGrowth": 0.4898977301072587,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "FY2023",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": -0.048154235706987736,
+        "grossMargin": 0.4752881878004387,
+        "operatingMargin": 0.01250758388948523,
+        "inventoryGrowth": -0.24242424242424243,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "FY2024",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": 0.10528772109954732,
+        "grossMargin": 0.5077903981759068,
+        "operatingMargin": 0.05645399653760081,
+        "inventoryGrowth": 0.10254143646408842,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "FY2025",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": 0.04762910104294216,
+        "grossMargin": 0.5160614243682238,
+        "operatingMargin": 0.08286647051710935,
+        "inventoryGrowth": 0.16897173782321095,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "Q1 2025",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": null,
+        "grossMargin": 0.5208841215667154,
+        "operatingMargin": 0.09913863156183975,
+        "inventoryGrowth": null,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "Q2 2025",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": null,
+        "grossMargin": 0.5169690860215054,
+        "operatingMargin": 0.09173387096774194,
+        "inventoryGrowth": null,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "Q3 2025",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": null,
+        "grossMargin": 0.5180995475113123,
+        "operatingMargin": 0.11101055806938159,
+        "inventoryGrowth": null,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "Q4 2025",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": null,
+        "grossMargin": 0.5082290980908493,
+        "operatingMargin": 0.026991441737985518,
+        "inventoryGrowth": null,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "Q1 2026",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": 0.07134731025516006,
+        "grossMargin": 0.5110740291262136,
+        "operatingMargin": 0.10694781553398058,
+        "inventoryGrowth": 0.1411671924290221,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "Q2 2026",
+        "currencyNeutralSalesGrowth": null,
+        "reportedSalesGrowth": 0.132896505376344,
+        "grossMargin": 0.5249888773542933,
+        "operatingMargin": 0.08512531514162835,
+        "inventoryGrowth": 0.134575175822087,
+        "operatingWorkingCapitalToSales": null
+      },
+      {
+        "period": "Q3 2026 PRELIM",
+        "currencyNeutralSalesGrowth": 0.07,
+        "reportedSalesGrowth": 0.09,
+        "grossMargin": 0.543,
+        "operatingMargin": 0.138996138996139,
+        "inventoryGrowth": null,
+        "operatingWorkingCapitalToSales": null
       }
     ]
   },
