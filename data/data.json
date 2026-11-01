@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-31T23:58:12",
+    "updated": "2026-11-01T13:10:30",
     "timeZone": "Europe/Oslo",
     "version": "2.6",
     "nextEarningsDate": "2026-10-29",
@@ -15,17 +15,17 @@
       "ticker": "MCD",
       "shares": 4,
       "stockValueNOK": 9529.996715722657,
-      "fundValueNOK": 66535,
+      "fundValueNOK": 66695,
       "equityFundValueNOK": 0,
-      "fixedIncomeFundValueNOK": 66535,
-      "cashNOK": 825,
-      "totalValueNOK": 76889.99671572266,
+      "fixedIncomeFundValueNOK": 66695,
+      "cashNOK": 798,
+      "totalValueNOK": 77022.99671572266,
       "allocation": {
-        "stockPct": 0.1239432581972518,
-        "fundPct": 0.8653271276105381,
+        "stockPct": 0.12372923830652909,
+        "fundPct": 0.8659102195953067,
         "equityFundPct": 0,
-        "fixedIncomeFundPct": 0.8653271276105381,
-        "cashPct": 0.010729614192210024
+        "fixedIncomeFundPct": 0.8659102195953067,
+        "cashPct": 0.010360542098164102
       },
       "stockPerformance": {
         "costNOK": 9174.165599999998,
@@ -34,12 +34,12 @@
       },
       "fundPerformance": {
         "startDate": "2026-09-24",
-        "latestDate": "2026-10-03",
+        "latestDate": "2026-11-01",
         "startValueNOK": 66660,
-        "currentValueNOK": 66535,
+        "currentValueNOK": 66695,
         "netFlowsNOK": 0,
-        "gainNOK": -125,
-        "returnPct": -0.0018751875187518752
+        "gainNOK": 35,
+        "returnPct": 0.000525052505250525
       },
       "history": [
         {
@@ -57,6 +57,14 @@
           "fixedIncomeFundValueNOK": 66535,
           "cashNOK": 825,
           "totalValueNOK": 76310.3974404419
+        },
+        {
+          "date": "2026-11-01",
+          "stockValueNOK": 9529.996715722657,
+          "equityFundValueNOK": 0,
+          "fixedIncomeFundValueNOK": 66695,
+          "cashNOK": 798,
+          "totalValueNOK": 77022.99671572266
         }
       ]
     },
@@ -65,17 +73,17 @@
       "ticker": "ADS",
       "shares": 6,
       "stockValueNOK": 10428.525788818359,
-      "fundValueNOK": 60848,
+      "fundValueNOK": 61053,
       "equityFundValueNOK": 0,
-      "fixedIncomeFundValueNOK": 60848,
-      "cashNOK": 684,
-      "totalValueNOK": 71960.52578881836,
+      "fixedIncomeFundValueNOK": 61053,
+      "cashNOK": 682,
+      "totalValueNOK": 72163.52578881836,
       "allocation": {
-        "stockPct": 0.14492008881956786,
-        "fundPct": 0.8455746999204794,
+        "stockPct": 0.14451242057291835,
+        "fundPct": 0.8460368216856179,
         "equityFundPct": 0,
-        "fixedIncomeFundPct": 0.8455746999204794,
-        "cashPct": 0.009505211259952798
+        "fixedIncomeFundPct": 0.8460368216856179,
+        "cashPct": 0.009450757741463832
       },
       "stockPerformance": {
         "costNOK": 9667.525,
@@ -84,12 +92,12 @@
       },
       "fundPerformance": {
         "startDate": "2026-09-24",
-        "latestDate": "2026-10-03",
+        "latestDate": "2026-11-01",
         "startValueNOK": 60800,
-        "currentValueNOK": 60848,
+        "currentValueNOK": 61053,
         "netFlowsNOK": 0,
-        "gainNOK": 48,
-        "returnPct": 0.0007894736842105263
+        "gainNOK": 253,
+        "returnPct": 0.004161184210526316
       },
       "history": [
         {
@@ -107,6 +115,14 @@
           "fixedIncomeFundValueNOK": 60848,
           "cashNOK": 684,
           "totalValueNOK": 70802.68045333862
+        },
+        {
+          "date": "2026-11-01",
+          "stockValueNOK": 10428.525788818359,
+          "equityFundValueNOK": 0,
+          "fixedIncomeFundValueNOK": 61053,
+          "cashNOK": 682,
+          "totalValueNOK": 72163.52578881836
         }
       ]
     }
@@ -10431,7 +10447,7 @@
       {
         "period": "FY2024",
         "revenue": 23683,
-        "costOfSales": 11658,
+        "costOfSales": 11657,
         "grossProfit": 12026,
         "grossMargin": 0.5077903981759068,
         "operatingIncome": 1337,
@@ -10445,7 +10461,7 @@
       {
         "period": "FY2025",
         "revenue": 24811,
-        "costOfSales": 12006,
+        "costOfSales": 12007,
         "grossProfit": 12804,
         "grossMargin": 0.5160614243682238,
         "operatingIncome": 2056,
@@ -10541,18 +10557,18 @@
         "epsGrowthYoY": 0.034482758620689724
       },
       {
-        "period": "Q3 2026 PRELIM",
+        "period": "Q3 2026",
         "revenue": 7252,
-        "costOfSales": null,
-        "grossProfit": null,
-        "grossMargin": 0,
+        "costOfSales": 3311,
+        "grossProfit": 3941,
+        "grossMargin": 0.5434362934362934,
         "operatingIncome": 1008,
         "operatingMargin": 0.138996138996139,
-        "netIncome": null,
-        "eps": null,
-        "revenueGrowthYoY": 0.09,
-        "operatingIncomeGrowthYoY": null,
-        "epsGrowthYoY": null
+        "netIncome": 706,
+        "eps": 4.06,
+        "revenueGrowthYoY": 0.0938159879336351,
+        "operatingIncomeGrowthYoY": 0.36956521739130443,
+        "epsGrowthYoY": 0.5797665369649805
       }
     ],
     "balanceADS": [
@@ -10689,16 +10705,16 @@
         "netDebt": 5193
       },
       {
-        "period": "Q3 2026 PRELIM",
-        "cash": null,
-        "inventories": null,
-        "receivables": null,
-        "totalCurrentAssets": null,
-        "totalAssets": null,
-        "totalLiabilities": null,
-        "equity": null,
-        "operatingWorkingCapital": null,
-        "netDebt": null
+        "period": "Q3 2026",
+        "cash": 1651,
+        "inventories": 5739,
+        "receivables": 3661,
+        "totalCurrentAssets": 13190,
+        "totalAssets": 21447,
+        "totalLiabilities": 14787,
+        "equity": 6255,
+        "operatingWorkingCapital": 6682,
+        "netDebt": 4646
       }
     ],
     "cashFlowADS": [
@@ -10813,14 +10829,14 @@
         "dividendsPaid": -491
       },
       {
-        "period": "Q3 2026 PRELIM",
-        "netIncome": null,
-        "cashFromOperations": null,
-        "capex": null,
-        "freeCashFlow": null,
+        "period": "Q3 2026",
+        "netIncome": 706,
+        "cashFromOperations": 1327,
+        "capex": -108,
+        "freeCashFlow": 1219,
         "investingCashFlow": null,
         "financingCashFlow": null,
-        "dividendsPaid": null
+        "dividendsPaid": 0
       }
     ]
   },
@@ -11005,16 +11021,16 @@
         "grossMargin": 0.5077903981759068,
         "operatingMargin": 0.05645399653760081,
         "inventoryGrowth": 0.10254143646408842,
-        "operatingWorkingCapitalToSales": null
+        "operatingWorkingCapitalToSales": 0.197
       },
       {
         "period": "FY2025",
-        "currencyNeutralSalesGrowth": null,
+        "currencyNeutralSalesGrowth": 0.1,
         "reportedSalesGrowth": 0.04762910104294216,
         "grossMargin": 0.5160614243682238,
         "operatingMargin": 0.08286647051710935,
         "inventoryGrowth": 0.16897173782321095,
-        "operatingWorkingCapitalToSales": null
+        "operatingWorkingCapitalToSales": 0.23
       },
       {
         "period": "Q1 2025",
@@ -11023,16 +11039,16 @@
         "grossMargin": 0.5208841215667154,
         "operatingMargin": 0.09913863156183975,
         "inventoryGrowth": null,
-        "operatingWorkingCapitalToSales": null
+        "operatingWorkingCapitalToSales": 0.199
       },
       {
         "period": "Q2 2025",
-        "currencyNeutralSalesGrowth": null,
+        "currencyNeutralSalesGrowth": 0.08,
         "reportedSalesGrowth": null,
         "grossMargin": 0.5169690860215054,
         "operatingMargin": 0.09173387096774194,
         "inventoryGrowth": null,
-        "operatingWorkingCapitalToSales": null
+        "operatingWorkingCapitalToSales": 0.207
       },
       {
         "period": "Q3 2025",
@@ -11041,7 +11057,7 @@
         "grossMargin": 0.5180995475113123,
         "operatingMargin": 0.11101055806938159,
         "inventoryGrowth": null,
-        "operatingWorkingCapitalToSales": null
+        "operatingWorkingCapitalToSales": 0.219
       },
       {
         "period": "Q4 2025",
@@ -11059,7 +11075,7 @@
         "grossMargin": 0.5110740291262136,
         "operatingMargin": 0.10694781553398058,
         "inventoryGrowth": 0.1411671924290221,
-        "operatingWorkingCapitalToSales": null
+        "operatingWorkingCapitalToSales": 0.237
       },
       {
         "period": "Q2 2026",
@@ -11068,16 +11084,16 @@
         "grossMargin": 0.5249888773542933,
         "operatingMargin": 0.08512531514162835,
         "inventoryGrowth": 0.134575175822087,
-        "operatingWorkingCapitalToSales": null
+        "operatingWorkingCapitalToSales": 0.24
       },
       {
-        "period": "Q3 2026 PRELIM",
+        "period": "Q3 2026",
         "currencyNeutralSalesGrowth": 0.07,
-        "reportedSalesGrowth": 0.09,
-        "grossMargin": 0.543,
+        "reportedSalesGrowth": 0.0938159879336351,
+        "grossMargin": 0.5434362934362934,
         "operatingMargin": 0.138996138996139,
-        "inventoryGrowth": null,
-        "operatingWorkingCapitalToSales": null
+        "inventoryGrowth": 0.04898556022664957,
+        "operatingWorkingCapitalToSales": 0.239
       }
     ]
   },
@@ -11368,6 +11384,42 @@
       "Fond": "Likviditetsfond",
       "Type": "Rentefond",
       "Verdi NOK": 60848,
+      "Innskudd/uttak siden sist": 0,
+      "Kommentar": "Oppdatert verdi"
+    },
+    {
+      "Dato": "2026-11-01",
+      "Person": "Malin",
+      "Fond": "Likviditetsfond",
+      "Type": "Rentefond",
+      "Verdi NOK": 61053,
+      "Innskudd/uttak siden sist": 0,
+      "Kommentar": "Oppdatert verdi"
+    },
+    {
+      "Dato": "2026-11-01",
+      "Person": "Malin",
+      "Fond": "Kontanter",
+      "Type": "Kontanter",
+      "Verdi NOK": 682,
+      "Innskudd/uttak siden sist": 0,
+      "Kommentar": "Oppdatert verdi"
+    },
+    {
+      "Dato": "2026-11-01",
+      "Person": "Elise",
+      "Fond": "Rentefond",
+      "Type": "Rentefond",
+      "Verdi NOK": 66695,
+      "Innskudd/uttak siden sist": 0,
+      "Kommentar": "Oppdatert verdi"
+    },
+    {
+      "Dato": "2026-11-01",
+      "Person": "Elise",
+      "Fond": "Kontanter",
+      "Type": "Kontanter",
+      "Verdi NOK": 798,
       "Innskudd/uttak siden sist": 0,
       "Kommentar": "Oppdatert verdi"
     }
