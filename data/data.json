@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-01T13:10:30",
+    "updated": "2026-11-01T13:36:14",
     "timeZone": "Europe/Oslo",
     "version": "2.6",
     "nextEarningsDate": "2026-10-29",
@@ -11102,57 +11102,57 @@
       {
         "VALUATION - STATUS": "Ticker",
         "McDonalds": "MCD",
-        "Selskap 2": ""
+        "Adidas": "ADS"
       },
       {
         "VALUATION - STATUS": "Aksjekurs lokal",
         "McDonalds": 258.1199951171875,
-        "Selskap 2": ""
+        "Adidas": 168.5500030517578
       },
       {
         "VALUATION - STATUS": "Valuta",
         "McDonalds": "USD",
-        "Selskap 2": ""
+        "Adidas": "EUR"
       },
       {
         "VALUATION - STATUS": "Kurs NOK",
         "McDonalds": 2382.499178930664,
-        "Selskap 2": ""
+        "Adidas": 1738.0876314697264
       },
       {
         "VALUATION - STATUS": "EPS TTM",
         "McDonalds": 12.309999999999999,
-        "Selskap 2": ""
+        "Adidas": 9.280000000000001
       },
       {
         "VALUATION - STATUS": "P/E TTM",
         "McDonalds": 20.968318043638305,
-        "Selskap 2": ""
+        "Adidas": 18.16271584609459
       },
       {
         "VALUATION - STATUS": "FCF Yield",
         "McDonalds": "",
-        "Selskap 2": ""
+        "Adidas": ""
       },
       {
         "VALUATION - STATUS": "Dividend Yield",
         "McDonalds": "",
-        "Selskap 2": ""
+        "Adidas": ""
       },
       {
         "VALUATION - STATUS": "Revenue growth latest qtr",
         "McDonalds": 0.03741049247406103,
-        "Selskap 2": ""
+        "Adidas": 0.0938159879336351
       },
       {
         "VALUATION - STATUS": "EPS growth latest qtr",
         "McDonalds": 0.0573248407643312,
-        "Selskap 2": ""
+        "Adidas": 0.5797665369649805
       },
       {
         "VALUATION - STATUS": "Operating margin",
         "McDonalds": 0.47,
-        "Selskap 2": ""
+        "Adidas": 0.138996138996139
       }
     ],
     "history": [
@@ -11198,8 +11198,8 @@
         "epsTtm": 11.95,
         "peTtm": 25.776568935506017,
         "dividendYield": null,
-        "ticker2Price": null,
-        "ticker2PeTtm": null
+        "ticker2Price": 169.0500030517578,
+        "ticker2PeTtm": 22.660858317930003
       },
       {
         "date": "2026-03-31",
@@ -11207,8 +11207,8 @@
         "epsTtm": 12.12,
         "peTtm": 25.45627052634463,
         "dividendYield": null,
-        "ticker2Price": null,
-        "ticker2PeTtm": null
+        "ticker2Price": 133.64999389648438,
+        "ticker2PeTtm": 17.312175375192275
       },
       {
         "date": "2026-06-30",
@@ -11216,8 +11216,17 @@
         "epsTtm": 12.31,
         "peTtm": 21.704304847748272,
         "dividendYield": null,
-        "ticker2Price": null,
-        "ticker2PeTtm": null
+        "ticker2Price": 180.89999389648438,
+        "ticker2PeTtm": 23.222078805710446
+      },
+      {
+        "date": "46295",
+        "mcdPrice": null,
+        "epsTtm": null,
+        "peTtm": null,
+        "dividendYield": null,
+        "ticker2Price": 145.75,
+        "ticker2PeTtm": 15.705818965517242
       }
     ],
     "historyRaw": [
@@ -11227,8 +11236,9 @@
         "MCD EPS TTM": 11.39,
         "MCD P/E TTM": 25.425812651757298,
         "MCD Dividend Yield": "",
-        "Ticker 2 Price": "",
-        "Ticker 2 P/E TTM": ""
+        "ADS Price EUR": "",
+        "ADS P/E TTM": "",
+        "ADS EPS TTM": ""
       },
       {
         "Dato": "2025-03-31",
@@ -11236,8 +11246,9 @@
         "MCD EPS TTM": 11.49,
         "MCD P/E TTM": 26.72671856726637,
         "MCD Dividend Yield": "",
-        "Ticker 2 Price": "",
-        "Ticker 2 P/E TTM": ""
+        "ADS Price EUR": "",
+        "ADS P/E TTM": "",
+        "ADS EPS TTM": ""
       },
       {
         "Dato": "2025-06-30",
@@ -11245,8 +11256,9 @@
         "MCD EPS TTM": 11.59,
         "MCD P/E TTM": 25.155305245294976,
         "MCD Dividend Yield": "",
-        "Ticker 2 Price": "",
-        "Ticker 2 P/E TTM": ""
+        "ADS Price EUR": "",
+        "ADS P/E TTM": "",
+        "ADS EPS TTM": ""
       },
       {
         "Dato": "2025-09-30",
@@ -11254,8 +11266,9 @@
         "MCD EPS TTM": 11.76,
         "MCD P/E TTM": 25.764454951902636,
         "MCD Dividend Yield": "",
-        "Ticker 2 Price": "",
-        "Ticker 2 P/E TTM": ""
+        "ADS Price EUR": "",
+        "ADS P/E TTM": "",
+        "ADS EPS TTM": ""
       },
       {
         "Dato": "2025-12-31",
@@ -11263,8 +11276,9 @@
         "MCD EPS TTM": 11.95,
         "MCD P/E TTM": 25.776568935506017,
         "MCD Dividend Yield": "",
-        "Ticker 2 Price": "",
-        "Ticker 2 P/E TTM": ""
+        "ADS Price EUR": 169.0500030517578,
+        "ADS P/E TTM": 22.660858317930003,
+        "ADS EPS TTM": 7.46
       },
       {
         "Dato": "2026-03-31",
@@ -11272,8 +11286,9 @@
         "MCD EPS TTM": 12.12,
         "MCD P/E TTM": 25.45627052634463,
         "MCD Dividend Yield": "",
-        "Ticker 2 Price": "",
-        "Ticker 2 P/E TTM": ""
+        "ADS Price EUR": 133.64999389648438,
+        "ADS P/E TTM": 17.312175375192275,
+        "ADS EPS TTM": 7.72
       },
       {
         "Dato": "2026-06-30",
@@ -11281,8 +11296,19 @@
         "MCD EPS TTM": 12.31,
         "MCD P/E TTM": 21.704304847748272,
         "MCD Dividend Yield": "",
-        "Ticker 2 Price": "",
-        "Ticker 2 P/E TTM": ""
+        "ADS Price EUR": 180.89999389648438,
+        "ADS P/E TTM": 23.222078805710446,
+        "ADS EPS TTM": 7.79
+      },
+      {
+        "Dato": 46295,
+        "MCD Price": "",
+        "MCD EPS TTM": "",
+        "MCD P/E TTM": "",
+        "MCD Dividend Yield": "",
+        "ADS Price EUR": 145.75,
+        "ADS P/E TTM": 15.705818965517242,
+        "ADS EPS TTM": 9.28
       }
     ]
   },
