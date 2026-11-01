@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-01T13:36:14",
+    "updated": "2026-11-01T13:38:16",
     "timeZone": "Europe/Oslo",
     "version": "2.6",
     "nextEarningsDate": "2026-10-29",
@@ -11220,7 +11220,7 @@
         "ticker2PeTtm": 23.222078805710446
       },
       {
-        "date": "46295",
+        "date": "2026-09-30",
         "mcdPrice": null,
         "epsTtm": null,
         "peTtm": null,
@@ -11301,7 +11301,7 @@
         "ADS EPS TTM": 7.79
       },
       {
-        "Dato": 46295,
+        "Dato": "2026-09-30",
         "MCD Price": "",
         "MCD EPS TTM": "",
         "MCD P/E TTM": "",
