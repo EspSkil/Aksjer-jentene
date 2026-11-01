@@ -67,7 +67,7 @@ function yoyMetric(q,prior,key,sourceKey){
 }
 function renderCompany(){
  const ads=currentPerson==='Malin',ids=['companyQuarterCard','companyTrendCard','companyKpiCard','companyPeCard','companyLearningCard'];
- ids.forEach(id=>{if($(id))$(id).style.display=(ads&&id==='companyPeCard')?'none':'block'});
+ ids.forEach(id=>{if($(id))$(id).style.display='block'});
  setText('companyPageTitle',ads?'Adidas':'McDonald’s');
  const intro=document.querySelector('#page-company .intro p');
  if(intro)intro.textContent=ads?'Hvordan utvikler salget, fortjenesten og lageret seg hos Adidas?':'Hva tjener McDonald’s, hvordan går restaurantene – og hva betaler markedet for overskuddet?';
@@ -85,7 +85,7 @@ function renderCompany(){
  setText('margin',financialNumber(q.operatingMargin)?pct(q.operatingMargin):'–');
  const md=yearAgo&&financialNumber(yearAgo.operatingMargin)&&financialNumber(q.operatingMargin)?Number(q.operatingMargin)-Number(yearAgo.operatingMargin):null;
  const me=$('marginChange');if(me){me.classList.remove('positive','negative');if(md!==null){me.textContent=`${num(Math.abs(md)*100,1)} prosentpoeng ${md>=0?'høyere':'lavere'} enn samme kvartal i fjor`;me.classList.add(md>=0?'positive':'negative')}else me.textContent='–'}
- renderCompanyChart();renderKpi();if(!ads)renderPE();
+ renderCompanyChart();renderKpi();renderPE();
 }
 function setPlainDelta(id,v,label){const e=$(id);if(!e)return;e.classList.remove('positive','negative');e.textContent=valid(v)?`${N(v)>=0?'↑':'↓'} ${pct(Math.abs(N(v)))} ${label}`:'–';if(valid(v))e.classList.add(N(v)>=0?'positive':'negative')}
 function findYearAgo(rows,period){const m=String(period).match(/^Q(\d)\s+(\d{4})$/);if(!m)return null;return rows.find(x=>x.period===`Q${m[1]} ${N(m[2])-1}`)||null}
@@ -113,7 +113,21 @@ function renderKpi(){
   setText('compSales',pct(q.globalComparableSales));setText('usCompSales',pct(q.usComparableSales));setText('loyaltyUsers',valid(q.loyaltyUsersM)?num(q.loyaltyUsersM,0)+' millioner':'–');setText('loyaltySales',valid(q.loyaltySalesTtmBn)?'$'+num(q.loyaltySalesTtmBn,0)+' milliarder':'–');
  }
 }
-function renderPE(){const rows=(DATA?.valuation?.history||[]).filter(x=>valid(x.peTtm)),cur=rows[rows.length-1];setText('currentPE',cur?num(cur.peTtm,1)+'×':'–');drawLine('peChart',rows,'peTtm',[],'chart-line');setText('peStart',rows[0]?formatDate(rows[0].date):'–');setText('peEnd',cur?formatDate(cur.date):'–')}
+function renderPE(){
+ const ads=currentPerson==='Malin',all=DATA?.valuation?.history||[];
+ const rows=all.map(x=>({date:x.date,peTtm:ads?x.ticker2PeTtm:x.peTtm})).filter(x=>x.date&&financialNumber(x.peTtm)&&Number(x.peTtm)>0);
+ const latestPrice=DATA?.market?.latest?.[ads?'adsEUR':'mcdUSD'];
+ // Current trailing EPS is calculated from the latest four quarterly earnings in JSON.
+ const quarters=companyIncome().filter(x=>/^Q\d 20\d{2}$/.test(x.period)&&financialNumber(x.eps));
+ const trailing=quarters.slice(-4);
+ const epsTtm=trailing.length===4?trailing.reduce((sum,q)=>sum+Number(q.eps),0):null;
+ const latest=financialNumber(latestPrice)&&epsTtm>0?Number(latestPrice)/epsTtm:null;
+ const cur=rows[rows.length-1];setText('currentPE',financialNumber(latest)?num(latest,1)+'×':cur?num(cur.peTtm,1)+'×':'–');
+ drawLine('peChart',rows,'peTtm',[],'chart-line');setText('peStart',rows[0]?formatDate(rows[0].date):'–');setText('peEnd',cur?formatDate(cur.date):'–');
+ const help=document.querySelector('#companyPeCard .chart-help');if(help)help.textContent=`P/E viser hvor mye markedet betaler for én ${ads?'euro':'dollar'} i årlig fortjeneste. Grafen viser kvartalsslutt, tallet viser siste tilgjengelige kurs.`;
+ setText('stockPE',financialNumber(latest)?num(latest,1)+'×':cur?num(cur.peTtm,1)+'×':'–');
+}
+
 function renderPortfolioChart(p){const rows=(p.history||[]).filter(x=>x.date&&valid(x.totalValueNOK));const svg=$('portfolioChart');if(!svg)return;if(!rows.length){svg.innerHTML='';setText('portfolioHistoryNote','Historikken starter når første måling er registrert.');return}drawMultiPortfolio(svg,rows);setText('portfolioHistoryNote',rows.length<2?'Første målepunkt er registrert. Kurven blir synlig når neste månedsverdi legges inn.':'Kurvene viser verdi. Flytting av penger mellom plasseringer påvirker derfor også linjene.')}
 function niceStep(span,targetTicks=4){if(!Number.isFinite(span)||span<=0)return 1;const raw=span/Math.max(targetTicks-1,1),power=Math.pow(10,Math.floor(Math.log10(raw))),fraction=raw/power;let niceFraction;if(fraction<=1)niceFraction=1;else if(fraction<=2)niceFraction=2;else if(fraction<=2.5)niceFraction=2.5;else if(fraction<=5)niceFraction=5;else niceFraction=10;return niceFraction*power}
 function niceScale(minValue,maxValue,targetTicks=4,includeZero=false){let lo=Number(minValue),hi=Number(maxValue);if(!Number.isFinite(lo)||!Number.isFinite(hi))return{min:0,max:1,step:1,ticks:[0,1]};if(includeZero){lo=Math.min(0,lo);hi=Math.max(0,hi)}if(lo===hi){const p=Math.abs(lo)||1;lo-=p*.1;hi+=p*.1}const step=niceStep(hi-lo,targetTicks),min=Math.floor(lo/step)*step,max=Math.ceil(hi/step)*step,ticks=[];for(let v=min,n=0;v<=max+step*.001&&n<12;v+=step,n++)ticks.push(Math.abs(v)<step*1e-9?0:v);return{min,max,step,ticks}}

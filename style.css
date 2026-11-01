@@ -18,3 +18,7 @@
   .detail{font-size:14px}
   .nav{font-size:12px}
 }
+
+/* Valuation: three compact stock key metrics */
+#marketMiniCards{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:620px){#marketMiniCards{grid-template-columns:repeat(3,minmax(0,1fr))}#marketMiniCards .mini strong{font-size:14px}#marketMiniCards .mini small{white-space:normal}}
