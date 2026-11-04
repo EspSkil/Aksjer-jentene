@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-03T23:58:11",
+    "updated": "2026-11-04T23:58:15",
     "timeZone": "Europe/Oslo",
     "version": "2.6",
     "nextEarningsDate": "2026-10-29",
@@ -14,23 +14,23 @@
       "company": "McDonalds",
       "ticker": "MCD",
       "shares": 4,
-      "stockValueNOK": 9711.75276348877,
+      "stockValueNOK": 10343.256509057617,
       "fundValueNOK": 66695,
       "equityFundValueNOK": 0,
       "fixedIncomeFundValueNOK": 66695,
       "cashNOK": 798,
-      "totalValueNOK": 77204.75276348877,
+      "totalValueNOK": 77836.25650905762,
       "allocation": {
-        "stockPct": 0.12579216195717938,
-        "fundPct": 0.8638716868159058,
+        "stockPct": 0.1328848145189767,
+        "fundPct": 0.856862893865391,
         "equityFundPct": 0,
-        "fixedIncomeFundPct": 0.8638716868159058,
-        "cashPct": 0.010336151226914952
+        "fixedIncomeFundPct": 0.856862893865391,
+        "cashPct": 0.010252291615632087
       },
       "stockPerformance": {
         "costNOK": 9174.165599999998,
-        "gainNOK": 537.5871634887717,
-        "returnPct": 0.05859793543390712
+        "gainNOK": 1169.0909090576188,
+        "returnPct": 0.1274329415917257
       },
       "fundPerformance": {
         "startDate": "2026-09-24",
@@ -72,23 +72,23 @@
       "company": "Adidas",
       "ticker": "ADS",
       "shares": 6,
-      "stockValueNOK": 10407.239477874757,
+      "stockValueNOK": 11001.066080749511,
       "fundValueNOK": 61053,
       "equityFundValueNOK": 0,
       "fixedIncomeFundValueNOK": 61053,
       "cashNOK": 682,
-      "totalValueNOK": 72142.23947787475,
+      "totalValueNOK": 72736.06608074952,
       "allocation": {
-        "stockPct": 0.14426000014965634,
-        "fundPct": 0.8462864535654496,
+        "stockPct": 0.1512463716216992,
+        "fundPct": 0.8393772620617218,
         "equityFundPct": 0,
-        "fixedIncomeFundPct": 0.8462864535654496,
-        "cashPct": 0.009453546284894053
+        "fixedIncomeFundPct": 0.8393772620617218,
+        "cashPct": 0.009376366316578944
       },
       "stockPerformance": {
         "costNOK": 9667.525,
-        "gainNOK": 739.714477874757,
-        "returnPct": 0.0765153933271191
+        "gainNOK": 1333.5410807495118,
+        "returnPct": 0.13794027744945184
       },
       "fundPerformance": {
         "startDate": "2026-09-24",
@@ -129,18 +129,18 @@
   },
   "market": {
     "latest": {
-      "date": "2026-11-03",
-      "mcdUSD": 263.0400085449219,
-      "usdNok": 9.2303,
-      "mcdNOK": 2427.9381908721925,
-      "sp500": 7568.919921875,
-      "adsEUR": 168.10000610351562,
-      "eurNok": 10.3185,
-      "adsNOK": 1734.539912979126,
-      "stoxx600": 645.6599731445312,
-      "ticker2": 168.10000610351562,
-      "ticker2FxNok": 10.3185,
-      "ticker2NOK": 1734.539912979126
+      "date": "2026-11-04",
+      "mcdUSD": 280.2200012207031,
+      "usdNok": 9.2278,
+      "mcdNOK": 2585.8141272644043,
+      "sp500": 7688.6201171875,
+      "adsEUR": 176.35000610351562,
+      "eurNok": 10.397,
+      "adsNOK": 1833.511013458252,
+      "stoxx600": 657.4000244140625,
+      "ticker2": 176.35000610351562,
+      "ticker2FxNok": 10.397,
+      "ticker2NOK": 1833.511013458252
     },
     "history": [
       {
@@ -10124,6 +10124,20 @@
         "ticker2": 168.10000610351562,
         "ticker2FxNok": 10.3185,
         "ticker2NOK": 1734.539912979126
+      },
+      {
+        "date": "2026-11-04",
+        "mcdUSD": 280.2200012207031,
+        "usdNok": 9.2278,
+        "mcdNOK": 2585.8141272644043,
+        "sp500": 7688.6201171875,
+        "adsEUR": 176.35000610351562,
+        "eurNok": 10.397,
+        "adsNOK": 1833.511013458252,
+        "stoxx600": 657.4000244140625,
+        "ticker2": 176.35000610351562,
+        "ticker2FxNok": 10.397,
+        "ticker2NOK": 1833.511013458252
       }
     ],
     "purchaseMarkers": [
@@ -10152,39 +10166,39 @@
     ],
     "performance": {
       "mcdUSD": {
-        "oneMonth": 0.13433097260452187,
-        "ytd": -0.13262546964826394,
-        "oneYear": -0.11246073192762529,
-        "total": -0.11446269533371001
+        "oneMonth": 0.2024545541272884,
+        "ytd": -0.07597443712650531,
+        "oneYear": -0.06346709928376859,
+        "total": -0.05662539334890648
       },
       "mcdNOK": {
-        "oneMonth": 0.08506385645029924,
-        "ytd": -0.20464458653245754,
-        "oneYear": -0.19020069332090062,
-        "total": -0.20620611791074606
+        "oneMonth": 0.15565381810923218,
+        "ytd": -0.15292684464847028,
+        "oneYear": -0.15313836478267884,
+        "total": -0.15458991412582568
       },
       "sp500": {
-        "oneMonth": -0.01991530039805567,
-        "ytd": 0.10358719725772492,
-        "oneYear": 0.1046340956763192,
-        "total": 0.5958657167130155
+        "oneMonth": -0.010976411731638325,
+        "ytd": 0.12104009733060606,
+        "oneYear": 0.13542989994183796,
+        "total": 0.621103853719986
       },
       "adsEUR": {
-        "oneMonth": 0.17840878581109054,
-        "ytd": 0.004181674029594795,
-        "oneYear": 0.036694495411635275,
-        "total": -0.07748872254745243
+        "oneMonth": 0.23928322081182984,
+        "ytd": 0.05346482994835533,
+        "oneYear": 0.11790812109994064,
+        "total": -0.03221378047340595
       },
       "adsNOK": {
-        "oneMonth": 0.12259715241580005,
-        "ytd": -0.12178254833458724,
-        "oneYear": -0.0816335722093956,
-        "total": -0.1562351977667764
+        "oneMonth": 0.19775297669352487,
+        "ytd": -0.07167234504614584,
+        "oneYear": -0.008835480742243385,
+        "total": -0.10809082795567992
       },
       "stoxx600": {
-        "oneMonth": 0.02266571333167966,
-        "ytd": 0.08920668921721209,
-        "oneYear": 0.12822384163538536,
+        "oneMonth": 0.03753042751196145,
+        "ytd": 0.10901176140133528,
+        "oneYear": 0.15216096730311546,
         "total": null
       }
     }
@@ -11134,8 +11148,8 @@
       },
       {
         "VALUATION - STATUS": "Aksjekurs lokal",
-        "McDonalds": 263.0400085449219,
-        "Adidas": 168.10000610351562
+        "McDonalds": 280.2200012207031,
+        "Adidas": 176.35000610351562
       },
       {
         "VALUATION - STATUS": "Valuta",
@@ -11144,8 +11158,8 @@
       },
       {
         "VALUATION - STATUS": "Kurs NOK",
-        "McDonalds": 2427.9381908721925,
-        "Adidas": 1734.539912979126
+        "McDonalds": 2585.8141272644043,
+        "Adidas": 1833.511013458252
       },
       {
         "VALUATION - STATUS": "EPS TTM",
@@ -11154,8 +11168,8 @@
       },
       {
         "VALUATION - STATUS": "P/E TTM",
-        "McDonalds": 21.367994195363273,
-        "Adidas": 18.11422479563746
+        "McDonalds": 22.76360692288409,
+        "Adidas": 19.003233416327113
       },
       {
         "VALUATION - STATUS": "FCF Yield",
