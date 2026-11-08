@@ -1,12 +1,12 @@
 {
   "meta": {
-    "updated": "2026-11-07T23:58:11",
+    "updated": "2026-11-08T13:44:23",
     "timeZone": "Europe/Oslo",
     "version": "2.6",
-    "nextEarningsDate": "2026-10-29",
+    "nextEarningsDate": "2027-01-28",
     "nextEarningsDates": {
-      "MCD": "2026-10-29",
-      "ADS": "2026-10-29"
+      "MCD": "2027-01-28",
+      "ADS": "2027-03-03"
     }
   },
   "portfolio": {
